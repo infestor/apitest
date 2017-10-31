@@ -1,0 +1,586 @@
+Using ecu: ZKE3_GM5
+
+Init..
+JOB: _JOBS (params: )
+Waiting for response..
+TotalJobSets 31
+
+JOB: _JOBCOMMENTS (params: INFO)
+Waiting for response..
+JOB: _RESULTS (params: INFO)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: ENERGIESPARMODE)
+Waiting for response..
+JOB: _RESULTS (params: ENERGIESPARMODE)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: SLEEP_MODE)
+Waiting for response..
+JOB: _RESULTS (params: SLEEP_MODE)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: INITIALISIERUNG)
+Waiting for response..
+JOB: _RESULTS (params: INITIALISIERUNG)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: IDENT)
+Waiting for response..
+JOB: _RESULTS (params: IDENT)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: FS_LESEN)
+Waiting for response..
+JOB: _RESULTS (params: FS_LESEN)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: FS_LOESCHEN)
+Waiting for response..
+JOB: _RESULTS (params: FS_LOESCHEN)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: DIAGNOSE_ENDE)
+Waiting for response..
+JOB: _RESULTS (params: DIAGNOSE_ENDE)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: PRUEFSTEMPEL_LESEN)
+Waiting for response..
+JOB: _RESULTS (params: PRUEFSTEMPEL_LESEN)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: PRUEFSTEMPEL_SCHREIBEN)
+Waiting for response..
+JOB: _RESULTS (params: PRUEFSTEMPEL_SCHREIBEN)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: HERSTELLDATEN_LESEN)
+Waiting for response..
+JOB: _RESULTS (params: HERSTELLDATEN_LESEN)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: COD_LESEN_ALLGEMEIN)
+Waiting for response..
+JOB: _RESULTS (params: COD_LESEN_ALLGEMEIN)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: COD_LESEN_SERVOTRONIK)
+Waiting for response..
+JOB: _RESULTS (params: COD_LESEN_SERVOTRONIK)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: IS_LESEN)
+Waiting for response..
+JOB: _RESULTS (params: IS_LESEN)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: SPEICHER_LESEN)
+Waiting for response..
+JOB: _RESULTS (params: SPEICHER_LESEN)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STATUS_DIGITAL_GM3_EA)
+Waiting for response..
+JOB: _RESULTS (params: STATUS_DIGITAL_GM3_EA)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STATUS_DIGITAL_GM3_KP)
+Waiting for response..
+JOB: _RESULTS (params: STATUS_DIGITAL_GM3_KP)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STATUS_DIGITAL_GM3_INT)
+Waiting for response..
+JOB: _RESULTS (params: STATUS_DIGITAL_GM3_INT)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STATUS_ANALOG_GM3)
+Waiting for response..
+JOB: _RESULTS (params: STATUS_ANALOG_GM3)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STEUERN_DIGITAL_GM3)
+Waiting for response..
+JOB: _RESULTS (params: STEUERN_DIGITAL_GM3)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STEUERN_ANALOG_GM3)
+Waiting for response..
+JOB: _RESULTS (params: STEUERN_ANALOG_GM3)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STEUERN_GENERIC_GM3)
+Waiting for response..
+JOB: _RESULTS (params: STEUERN_GENERIC_GM3)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STEUERN_SIMULTAN_GM3)
+Waiting for response..
+JOB: _RESULTS (params: STEUERN_SIMULTAN_GM3)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STATUS_BYTES_GM3)
+Waiting for response..
+JOB: _RESULTS (params: STATUS_BYTES_GM3)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STATUS_FH_HINTEN)
+Waiting for response..
+JOB: _RESULTS (params: STATUS_FH_HINTEN)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STATUS_INRS)
+Waiting for response..
+JOB: _RESULTS (params: STATUS_INRS)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: STATUS_KEY_MEMORY)
+Waiting for response..
+JOB: _RESULTS (params: STATUS_KEY_MEMORY)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: C_C_AUFTRAG)
+Waiting for response..
+JOB: _RESULTS (params: C_C_AUFTRAG)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: C_C_LESEN)
+Waiting for response..
+JOB: _RESULTS (params: C_C_LESEN)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: C_FG_LESEN)
+Waiting for response..
+JOB: _RESULTS (params: C_FG_LESEN)
+Waiting for response..
+JOB: _JOBCOMMENTS (params: C_FG_AUFTRAG)
+Waiting for response..
+JOB: _RESULTS (params: C_FG_AUFTRAG)
+Waiting for response..
+INFO
+(Information SGBD)
+  > ECU (string) | Steuergerät im Klartext
+  > ORIGIN (string) | Steuergeräte-Verantwortlicher
+  > REVISION (string) | Versions-Nummer
+  > AUTHOR (string) | Namen aller Autoren
+  > COMMENT (string) | wichtige Hinweise
+  > PACKAGE (string) | Include-Paket-Nummer
+  > SPRACHE (string) | deutsch, english
+
+ENERGIESPARMODE
+(Einstellen des Energiesparmodes)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_AUFTRAG (binary) | Hex-Auftrag an SG
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+SLEEP_MODE
+(SG in Sleep-Mode versetzen)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_AUFTRAG (binary) | Hex-Auftrag von SG
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+INITIALISIERUNG
+(Default init job)
+  > DONE (int) | 1 if done
+
+IDENT
+(Ident-Daten fuer GM III)
+  > JOB_STATUS (string) | Status der Kommunikation
+  > ID_BMW_NR (string) | BMW-Teilenummer
+  > ID_HW_NR (int) | BMW-Hardwarenummer
+  > ID_COD_INDEX (int) | Codier-Index
+  > ID_DIAG_INDEX (int) | Diagnose-Index
+  > ID_BUS_INDEX (int) | Bus-Index
+  > ID_DATUM_KW (int) | Herstelldatum KW
+  > ID_DATUM_JAHR (int) | Herstelldatum Jahr
+  > ID_LIEF_NR (int) | Lieferanten-Nummer
+  > ID_LIEF_TEXT (string) | Lieferanten-Text
+  > ID_SW_NR (int) | Softwarenummer
+  > _TEL_ANTWORT (binary) | 
+
+FS_LESEN
+(Fehlerspeicher lesen)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > F_ORT_NR (int) | momentan identisch Fehlerbyte
+  > F_ORT_TEXT (string) | Fehlerort als Text
+  > F_HFK (int) | Wertebereich 0 - 31
+  > F_ART_ANZ (int) | immer 1
+  > F_UW_ANZ (int) | immer 0
+  > F_ART1_NR (int) | momentan identisch Art-Bit
+  > F_ART1_TEXT (string) | Fehlerart als Text
+  > _TEL_ANTWORT0 (binary) | 
+  > _TEL_ANTWORT1 (binary) | 
+  > _TEL_ANTWORT2 (binary) | 
+
+FS_LOESCHEN
+(Fehlerspeicher loeschen)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_ANTWORT (binary) | 
+
+DIAGNOSE_ENDE
+(Diagnose beenden)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_ANTWORT (binary) | 
+
+PRUEFSTEMPEL_LESEN
+(Auslesen des Pruefstempels)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > BYTE1 (int) | kann beliebig verwendet werden
+  > BYTE2 (int) | kann beliebig verwendet werden
+  > BYTE3 (int) | kann beliebig verwendet werden
+  > _TEL_ANTWORT (binary) | 
+
+PRUEFSTEMPEL_SCHREIBEN
+(Beschreiben des Pruefstempels)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+HERSTELLDATEN_LESEN
+(Auslesen der Herstelldaten)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > BYTE1 (int) | kann beliebig verwendet werden
+  > BYTE2 (int) | kann beliebig verwendet werden
+  > BYTE3 (int) | kann beliebig verwendet werden
+  > BYTE4 (int) | kann beliebig verwendet werden
+  > _TEL_ANTWORT (binary) | 
+
+COD_LESEN_ALLGEMEIN
+(Auslesen der allgemeinen Codierdaten des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > COD_MIT_SIR (int) | Scheibenintensivreinigung
+  > COD_MIT_SRA (int) | Scheinwerferreinigung
+  > COD_MIT_HYD_HK (int) | hydraulische Heckklappe (HK) verbaut (für E39/2)
+  > COD_MIT_SERVO (int) | Servotronik SVT
+  > COD_WI_OHNE_POTI (int) | Wischerintervall ohne Potentiometer (mit Regensensor)
+  > COD_MIT_SP_EINKLAPPEN (int) | Spiegel einklappen
+  > COD_MIT_SP_HEIZUNG (int) | Spiegel-Heizung
+  > COD_MIT_SP_MEMORY (int) | Spiegel-Memory
+  > COD_MIT_SCA_HK (int) | Soft-Close-Automatik Heckklappe
+  > COD_MIT_FHH (int) | elektrische Fensterheber hinten
+  > COD_MIT_LSM (int) | Lenksaeulenmemory LSM
+  > COD_MIT_GLAS_SHD (int) | Glasdach
+  > COD_IL_OHNE_SOFT (int) | ohne Soft On/Off bei Innenlicht
+  > COD_OEH (int) | integrierte optische Einstiegshilfe OEH
+  > COD_BC_WS_IGNORIEREN (int) | Bord Computer (BC) Wegfahrsicherung (WFS) nicht ausführen
+  > COD_WI_INT_STILL (string) | mit Wischerintervall kurz, Intervallzeit bei Stillstand
+  > COD_IB_LEIST_KONF_WERT (real) | IB-Leistung Konfiguration (Default Wert: 80%)
+  > COD_IB_LEIST_KONF_EINH (string) | Einheit: 'Prozent'
+  > COD_OEH_LEIST_KONF_WERT (real) | OEH-Leistung Konfiguration (Default Wert: 80%)
+  > COD_OEH_LEIST_KONF_EINH (string) | Einheit: 'Prozent'
+  > COD_MIT_SHD (int) | Schiebehebedach SHD verbaut
+  > COD_MIT_SM (int) | Sitzmemory FT verbaut
+  > COD_MIT_SMBF (int) | Sitzmemory BT verbaut
+  > COD_MIT_SB_FOND (int) | Schalterblock Fond verbaut
+  > COD_K_FS_UNL_300MS (int) | 1 = Auf dem K-Bus wird das FS-Unlock-Telegramm 300ms verzögert
+  > COD_P_FS_UNL_300MS (int) | 1 = Auf dem P-Bus wird das FS-Unlock-Telegramm 300ms verzögert
+  > COD_IB_CRASH_0KMH (int) | nur im Crashfall: mit Innenbeleuchtung "Ein" erst bei 0 KMH
+  > COD_RDC_ALARM_HFK (int) | mit RDC-DWA Trigger über HFK
+  > COD_RDC_ALARM_KBUS (int) | mit RDC-DWA Trigger über K-Bus
+  > COD_MIT_DWA (int) | 1, wenn Diebstahlwarnanlage aktiviert
+  > COD_NG_AKTIV (int) | 1, wenn Neigungsgeber aktiviert
+  > COD_INRS_AKTIV (int) | 1, wenn Innenraumschutz aktiviert
+  > COD_S_E_MIT_FERNBED (int) | 1, wenn Schaerfen u. Entschaerfen nur ueber Fernbedienung
+  > COD_AKK_ALARM (string) | Intervallton oder Dauerton
+  > COD_OPT_ALARM_WARNBL (int) | 1, wenn optischer Alarm mit Warnblinkern
+  > COD_OPT_ALARM_ABBLLI (int) | 1, wenn optischer Alarm mit Abblendlicht
+  > COD_OPT_ALARM_FERNLI (int) | 1, wenn optischer Alarm mit Fernlicht
+  > COD_MIT_SIRENE (int) | 1, wenn mit Notstromsirene
+  > COD_QS_WARNBL (int) | 1, wenn Quittierungssignal beim Schaerfen mit Warnblinker
+  > COD_QS_HORN (int) | 1, wenn Quit.-sign. beim Schaerfen mit DWA-Horn
+  > COD_QE_WARNBL (int) | 1, wenn Quittierungssignal beim Entschaerfen mit Warnblinker
+  > COD_QE_HORN (int) | 1, wenn Quit.-sign. beim Entschaerfen mit DWA-Horn
+  > COD_OHNE_NOTENTSCHAERFEN (int) | 1, wenn Entfall Notentschaerfen
+  > COD_AUTO_WS (int) | 1, wenn automatische Wegfahrsperre
+  > COD_SUEFV_DEAKTIV (int) | Scheibenueberwachung Fahrertuere vorne deaktiv
+  > COD_SUEFH_DEAKTIV (int) | COD_Scheibenueberwachung Fahrertuere hinten deaktiv
+  > COD_SUEBV_DEAKTIV (int) | Scheibenueberwachung Beifahrertuere vorne deaktiv
+  > COD_SUEBH_DEAKTIV (int) | Scheibenueberwachung Beifahrertuere hinten deaktiv
+  > COD_HSUE_DEAKTIV (int) | Heckscheibenueberwachung deaktiv
+  > COD_MIT_FUNK_IRS_H (int) | Funkinnenraumschutz hinten
+  > COD_TKV_AN_GM (string) | Tuerkontakt vorne an Grundmodul angeschlossen
+  > COD_LOGIK_TK (string) | Logik Tuerkontakte invertiert
+  > COD_FH_LA_AB (string) | Laendervariante der Fensterheber-Abschaltung
+  > COD_FH_KFO_INAKTIV (int) | Komfortoeffnung bei Fensterheber inaktiv
+  > COD_FH_KFS_INAKTIV (int) | Komfortschliessung bei Fensterheber inaktiv
+  > COD_REVERS_LANG (int) | langes FH Reversieren
+  > COD_SERVOTRONIC_KW (int) | Servotronik Ventil Korrekturwert
+  > COD_ZV_AGG_TYP (string) | ZV Aggregate Typ: 1 = E53, 0 = E39
+  > COD_MIT_ZV_BS_BT (int) | mit ZV über Bedienstelle Beifahrertüre
+  > COD_MIT_AUTO_ZV_8KMH (int) | mit geschwindigkeitsabhängiger (automatischer) ZV
+  > COD_MIT_HK_NICHT_ENTSICHERN (int) | ohne Heckklappe entsichern
+  > COD_MIT_SEL_ZV (int) | selektive Zentralverriegelung
+  > COD_FB_MIT_AUTO_ZV (int) | mit automatischem Verriegeln nach 2min
+  > COD_FB_MIT_ENTRIEGELN_KLR (int) | mit automatischem Entriegeln bei KL.R an, innerhalb 30s nach verriegeln
+  > COD_FB_ZV_ENTRIEGELN_SCHLUESSEL (int) | ZV entriegeln über Schlüssel, auch wenn DWA nicht entschärft wird
+  > COD_MIT_CRASHTIMER_HKOE (int) | mit Crashtimer HK Öffnen erst nach 10sec
+  > COD_FB_MIT_KFO (int) | mit Komfortoeffnung
+  > COD_FB_MIT_KFS (int) | mit Komfortschliessung
+  > COD_FB_MIT_PANIK (int) | mit Panik-Mode
+  > COD_FB_MIT_IL (int) | mit Innenlicht an bei mehrmaligem Verriegeln
+  > COD_FB_KBUS_SPERREN (int) | mit interner FZV, d.h. K-Bus Fernbedienung sperren
+  > COD_MIT_IRF_BT (int) | mit IR-FB an PM-BT fuer Hongkong
+  > COD_DEB_TIM_CS_WERT (real) | Debounce Time Crash-Sensor (Default Wert:100d = 1ms)
+  > COD_DEB_TIM_CS_EINH (string) | Einheit: 'ms'
+  > COD_FZG_TYP (string) | Fahrzeugtyp: E38, E39, E39/2 (HK, HS Funktion), E53, L30 / L322
+  > COD_E39_2_HECK_FKT (int) | E39/2: Heckklappen-, Heckscheibenfunktion
+  > COD_MIT_ADV (int) | Anpressdruckverstellung ADV verbaut
+  > COD_PASS_DWA_HORN (int) | passives DWA Horn E38
+  > COD_DWAH_PIN_C17 (int) | DWAH auf Pin C17
+  > COD_BLOCK_0 (binary) | Codierdaten im Block 0
+  > DATENSICHERUNG_BLOCK_0 (string) | Datensicherungsbyte fuer Block 0
+  > CHECKSUMME_BLOCK_0 (int) | Checksumme fuer Block 0
+  > _TEL_ANTWORT (binary) | 
+
+COD_LESEN_SERVOTRONIK
+(Auslesen der Codierdaten des GM III (Block 1 und 2))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > COD_BLOCK_1 (binary) | Codierdaten im Block 1
+  > DATENSICHERUNG_BLOCK_1 (string) | Datensicherungsbyte fuer Block 1
+  > CHECKSUMME_BLOCK_1 (int) | Checksumme fuer Block 1
+  > COD_BLOCK_2 (binary) | Codierdaten im Block 2
+  > DATENSICHERUNG_BLOCK_2 (string) | Datensicherungsbyte fuer Block 2
+  > CHECKSUMME_BLOCK_2 (int) | Checksumme fuer Block 2
+  > _TEL_ANTWORT1 (binary) | 
+  > _TEL_ANTWORT2 (binary) | 
+
+IS_LESEN
+(Infospeicher lesen)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > F_ORT_NR (int) | momentan identisch Fehlerbyte
+  > F_ORT_TEXT (string) | Fehlerort als Text
+  > F_HFK (int) | Wertebereich 0 - 31
+  > F_ART_ANZ (int) | immer 1
+  > F_UW_ANZ (int) | immer 0
+  > F_ART1_NR (int) | momentan identisch Art-Bit
+  > F_ART1_TEXT (string) | Fehlerart als Text
+  > _TEL_ANTWORT0 (binary) | 
+  > _TEL_ANTWORT1 (binary) | 
+  > _TEL_ANTWORT2 (binary) | 
+
+SPEICHER_LESEN
+(Lesen des internen Speichers der ZKE III)
+  > DATEN (binary) | ausgelesene Daten
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+
+STATUS_DIGITAL_GM3_EA
+(Status der Digitalsignale des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_E_TKFH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TKBH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TKFT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TKBT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MHK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_HFK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_HKK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SIB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SUEFH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_FIS2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE (== E_SUEFH)
+  > STAT_E_SUEBH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_HSK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE (== E_SUEBH)
+  > STAT_E_INRS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_NGEG_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_ERHK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_VRHK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_KLR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_KL30_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_CS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_WS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_DSIR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TOEHKI_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_NS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TOEHS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE (== E_NS)
+  > STAT_E_REE2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_REE1_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TZV_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TOEHK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SW1_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SW2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SWP_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SFFHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SFFHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SIR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SFBHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SFBHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SCAO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_RSK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MFBHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MFBHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MFFHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MFFHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SIRENE_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_DWAH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_VA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_WP_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_MVR_GH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_MVR_GL_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_MER_GH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_MER_GL_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_MZS_GH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_MZS_GL_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_MERHK_GH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_MERHK_GL_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MHKER_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MVR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MER_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MZS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_OEH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_IB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_PRelay_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_XC7_H1_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_XC7_L1_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_XC16_H2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_XC16_L2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_WI1_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_WI2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SRA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_IP_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_DWAL_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_NGAG_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_XB21_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_OUT_XB22_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_TKFT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_TKBT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFN_FTOFFEN_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFN_BTOFFEN_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_ANLE_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_RERHS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE (== A_ANLE)
+  > _TEL_ANTWORT0 (binary) | 
+  > _TEL_ANTWORT1 (binary) | 
+  > _TEL_ANTWORT2 (binary) | 
+
+STATUS_DIGITAL_GM3_KP
+(Status der Digitalsignale des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_K_KLR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_K_KL15_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_K_KL50_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_K_KL58_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_TKFT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_TKBT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_DIGITAL_GM3_INT
+(Status der Digitalsignale des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_IFN_ZV_VERRIEGELT (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFN_ZV_GESICHERT (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFN_FTOFFEN_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFN_BTOFFEN_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_GM3
+(Status der Analogsignale des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_TACHOA_WERT (real) | aktuelle Geschwindigkeit ueber Tacho-A-Eingang
+  > STAT_TACHOA_EINH (string) | Einheit: 'km/h'
+  > STAT_KMH_WERT (real) | Geschwindigkeit ueber K-Bus
+  > STAT_KMH_EINH (string) | Einheit: 'km/h'
+  > STAT_TEMP_WERT (real) | Aussentemperatur ueber K-Bus
+  > STAT_TEMP_EINH (string) | Einheit: 'Grad Celsius'
+  > STAT_ISERV_WERT (real) | Strom im Servoventil
+  > STAT_ISERV_EINH (string) | Einheit: 'Milli-Ampere'
+  > STAT_ASERV_WERT (real) | PWM-Ansteuerung Servoventil
+  > STAT_ASERV_EINH (string) | Einheit: 'Prozent'
+  > STAT_AIB_WERT (real) | PWM-Ansteuerung Innenlicht
+  > STAT_AIB_EINH (string) | Einheit: 'Prozent'
+  > STAT_VAL_OEH_WERT (real) | PWM-Ansteuerung Optische Einstiegshilfe
+  > STAT_VAL_OEH_EINH (string) | Einheit: 'Prozent'
+  > STAT_DA_IB_WERT (real) | Aktueller Wert IB, Diagnose Feedback
+  > STAT_DA_IB_EINH (string) | Einheit: 'Prozent'
+  > STAT_DA_OEH_WERT (real) | Aktueller Wert OEH, Diagnose Feedback
+  > STAT_DA_OEH_EINH (string) | Einheit: 'Prozent'
+  > STAT_DA_VA_WERT (real) | Aktueller Wert VA, Diagnose Feedback
+  > STAT_DA_VA_EINH (string) | Einheit: 'Ampere'
+  > STAT_IFHBH_WERT (real) | mom. Strom FH-Antrieb BT hinten
+  > STAT_IFHBH_EINH (string) | Einheit: 'Ampere'
+  > STAT_IFHFH_WERT (real) | mom. Strom FH-Antrieb FT hinten
+  > STAT_IFHFH_EINH (string) | Einheit: 'Ampere'
+  > STAT_DA_WP_WERT (real) | Diagnose Feedback Wasch Pumpe
+  > STAT_DA_WP_EINH (string) | Einheit: '1'
+  > STAT_SERV_FEEDBACK_WERT (real) | Diagnose Feedback Servotronic
+  > STAT_SERV_FEEDBACK_EINH (string) | Einheit: '1'
+  > STAT_U30L1_WERT (real) | Spannung am Laststromkreis 1
+  > STAT_U30L1_EINH (string) | Einheit: 'Volt'
+  > STAT_U30L2_WERT (real) | Spannung am Laststromkreis 2
+  > STAT_U30L2_EINH (string) | Einheit: 'Volt'
+  > STAT_UWIINT_WERT (real) | Spannung am Wischerpotentiometer
+  > STAT_UWIINT_EINH (string) | Einheit: 'Volt'
+  > STAT_UEKSBH_WERT (real) | Spannung an der Einklemmschutzleiste BH
+  > STAT_UEKSBH_EINH (string) | Einheit: 'Volt'
+  > STAT_UEKSFH_WERT (real) | Spannung an der Einklemmschutzleiste FH
+  > STAT_UEKSFH_EINH (string) | Einheit: 'Volt'
+  > STAT_C17_PWM_WERT (real) | PWM Ansteuerung C17
+  > STAT_C17_PWM_EINH (string) | Einheit: 'Prozent'
+  > STAT_C16_PWM_WERT (real) | PWM Ansteuerung C16
+  > STAT_C16_PWM_EINH (string) | Einheit: 'Prozent'
+  > STAT_DA_MERHK_WERT (real) | Aktueller Wert MERHK, Diagnose Feedback
+  > STAT_DA_MERHK_EINH (string) | Einheit: '1'
+  > STAT_IBHMAX_WERT (real) | max. Strom FH-Antrieb BT hinten
+  > STAT_IBHMAX_EINH (string) | Einheit: 'Ampere'
+  > STAT_IFHMAX_WERT (real) | max. Strom FH-Antrieb FT hinten
+  > STAT_IFHMAX_EINH (string) | Einheit: 'Ampere'
+  > STAT_ADVP_WERT (real) | aktuelle ADV-Position
+  > STAT_ADVP_EINH (string) | Einheit: '1'
+  > STAT_GKL_WERT (real) | aktuelle Geschwindigkeitsklasse
+  > STAT_GKL_EINH (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_DIGITAL_GM3
+(Ansteuern eines digitalen Ein- oder Ausgangs v. GM3)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_ANALOG_GM3
+(Ansteuern eines analogen Ein- oder Ausgangs v. GM3)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_GENERIC_GM3
+(Ansteuern eines Statussignals)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_SIMULTAN_GM3
+(Gleichzeitiges Ansteuern maximal 5 digitaler Signale des GM3)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_BYTES_GM3
+(Status der Digitalsignale des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_DATEN0 (binary) | Rohe digital Daten
+  > STAT_DATEN1 (binary) | Rohe digital Flags
+  > _TEL_ANTWORT0 (binary) | 
+  > _TEL_ANTWORT1 (binary) | 
+
+STATUS_FH_HINTEN
+(Status der FH-Signale hinten (GM3))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_PS_SBFHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SBFHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SBFHT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SBBHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SBBHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SBBHT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFHBH_WERT (long) | mom. Strom FH-Antrieb BT hinten
+  > STAT_IFHBH_EINH (string) | Einheit: 'Ampere'
+  > STAT_IFHFH_WERT (long) | mom. Strom FH-Antrieb FT hinten
+  > STAT_IFHFH_EINH (string) | Einheit: 'Ampere'
+  > STAT_IBHMAX_WERT (long) | max. Strom FH-Antrieb BT hinten
+  > STAT_IBHMAX_EINH (string) | Einheit: 'Ampere'
+  > STAT_IFHMAX_WERT (long) | max. Strom FH-Antrieb FT hinten
+  > STAT_IFHMAX_EINH (string) | Einheit: 'Ampere'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_INRS
+(1.) Ansteuern: NGAG - 2.) Status lesen: INRS)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_E_INRS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT1 (binary) | 
+  > _TEL_ANTWORT2 (binary) | 
+
+STATUS_KEY_MEMORY
+(Auslesen der Nummer des Funkschluessels,)
+  > STAT_NR (int) | 0   : ungueltig ! (z.B.: mechanisch entriegelt)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_ANTWORT (binary) | 
+
+C_C_AUFTRAG
+(Codierdaten schreiben und verifizieren)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+
+C_C_LESEN
+(Codierdaten lesen)
+  > CODIER_DATEN (binary) | Codierdaten
+  > JOB_STATUS (string) | OKAY, ERROR_..
+
+C_FG_LESEN
+(Auslesen des Pruefstempels und Interpretation als FG-Nummer)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > FG_NR (string) | Fahrgestellnummer
+  > _TEL_ANTWORT (binary) | 
+
+C_FG_AUFTRAG
+(Beschreiben des Pruefstempels mit der FG-Nummer)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_ANTWORT (binary) | 
+
+
