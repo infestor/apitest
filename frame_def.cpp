@@ -1,5 +1,7 @@
 #include "frame_def.h"
 
+// definice senzoru v ECU frame 12 05 0B 03
+
 //  { Name | Unit | pos | len | * | + }
 t_Sensor_Def SENSORS[SENSORS_SIZE]  = {
 	{"RPM", "1/min", 3, 2, 1, 0},
