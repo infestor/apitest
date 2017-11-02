@@ -1,6 +1,6 @@
 ## General Flags
 PROJECT = INPA
-TARGETS = jobs.exe tmode.exe
+TARGETS = jobs.exe tmode.exe gm5_get.exe
 
 CESTA=d:/Dev-Cpp/bin/
 
@@ -48,6 +48,9 @@ jobs.exe: $(OBJECTS) jobs.o
 
 tmode.exe: $(OBJECTS) tmode.o
 	$(CC) $(LDFLAGS) $(OBJECTS) tmode.o $(LIBDIRS) $(LIBS) -o $@
+
+gm5_get.exe: $(OBJECTS) gm5_get.o
+	$(CC) $(LDFLAGS) $(OBJECTS) gm5_get.o $(LIBDIRS) $(LIBS) -o $@
 
 
 ## Clean target
