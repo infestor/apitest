@@ -5,7 +5,7 @@
 
 #include "api.h"
 #include "print_result.h"
-#include "make_job.h"
+#include "ecu_class.h"
 
 typedef struct {
 	char resultName[150];
@@ -30,31 +30,30 @@ typedef struct {
 
 unsigned int numJobRecords;
 t_Job_Record *jobRecords;
+Ecu ecu();
 
 //----------------------------------------------------------------------------------
 int main (int argc, char *argv[])
 { 
 	APITEXT t[APIMAXTEXT];
-	char ecuName[100];
 
 	if (argc == 2) { //non default ecu name
-		strcpy(ecuName, argv[1]);
+		ecu.SetEcuName(argv[1]);
 	}
-	else {
-		strcpy(ecuName, DEFAULT_ECU_NAME);
-	}
-	printf("Using ecu: %s\n\n", ecuName);
+	printf("Using ecu: %s\n\n", ecu.GetEcuName);
 
 	printf("Init..\n");
 	if (apiInit() == APIFALSE) FatalError();
 
-	MakeJob("_JOBS", "", ecuName);
+	ecu.MakeJob("_JOBS");
 
 	APIWORD sets;
 	apiResultSets (&sets);
 	numJobRecords = (unsigned int)sets;
 	jobRecords = new t_Job_Record[numJobRecords];
 	printf("TotalJobSets %d\n\n", numJobRecords);
+	printf("*****************************************************************************\n");
+	ecu.DisableDebugPrint();
 
 	for (APIWORD set = 1; (set <= numJobRecords) && (apiErrorCode() == EDIABAS_ERR_NONE); set++) {
 		apiResultText(t, "JOBNAME", set, "");
@@ -65,12 +64,12 @@ int main (int argc, char *argv[])
 	{
 		t_Job_Record *pJob = &jobRecords[i];
 
-		MakeJob("_JOBCOMMENTS", pJob->jobName, ecuName);
+		ecu.MakeJob("_JOBCOMMENTS", pJob->jobName);
 		apiResultText(t, "JOBCOMMENT0", 1, "");
 		strcpy(pJob->jobDesc, t);
 
 		//get all JOB ARGUMENTS
-		MakeJob("_ARGUMENTS", pJob->jobName, ecuName);
+		ecu.MakeJob("_ARGUMENTS", pJob->jobName);
 		apiResultSets (&sets);
 		pJob->numJobArguments = sets;
 		pJob->jobArguments = new t_Job_Argument[pJob->numJobArguments];
@@ -85,7 +84,7 @@ int main (int argc, char *argv[])
 		}
 
 		//get all JOB RESULTS
-		MakeJob("_RESULTS", pJob->jobName, ecuName);
+		ecu.MakeJob("_RESULTS", pJob->jobName);
 		apiResultSets (&sets);
 		pJob->numJobResults = sets;
 		pJob->jobResults = new t_Job_Result[pJob->numJobResults];
@@ -120,6 +119,8 @@ int main (int argc, char *argv[])
 		}
 		printf("\n");
 	}
+
+ecu.EnableDebugPrint();
 
 //remove all allocated memory
 for (unsigned int job = 0; job < numJobRecords; job++)
