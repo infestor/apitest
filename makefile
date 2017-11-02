@@ -31,7 +31,7 @@ LIBDIRS += -L"d:/inpa_prg"
 LIBS = -lapiw32
 
 ## Objects that must be built in order to link
-OBJECTS = apicalls.o print_result.o make_job.o frame_def.o
+OBJECTS = apicalls.o print_result.o make_job.o frame_def.o ecu_class.o
 
 ## Build
 all: $(TARGETS)
