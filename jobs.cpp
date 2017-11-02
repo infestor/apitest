@@ -30,7 +30,7 @@ typedef struct {
 
 unsigned int numJobRecords;
 t_Job_Record *jobRecords;
-Ecu ecu();
+Ecu ecu;
 
 //----------------------------------------------------------------------------------
 int main (int argc, char *argv[])
@@ -40,10 +40,10 @@ int main (int argc, char *argv[])
 	if (argc == 2) { //non default ecu name
 		ecu.SetEcuName(argv[1]);
 	}
-	printf("Using ecu: %s\n\n", ecu.GetEcuName);
+	printf("Using ecu: %s\n\n", (char*)(ecu.GetEcuName()));
 
 	printf("Init..\n");
-	if (apiInit() == APIFALSE) FatalError();
+	if (apiInit() == APIFALSE) ecu.FatalError();
 
 	ecu.MakeJob("_JOBS");
 
@@ -110,7 +110,7 @@ int main (int argc, char *argv[])
 			{
 				printf(" << %s (%s) | %s\n", jobRecords[job].jobArguments[res].argName, jobRecords[job].jobArguments[res].argType, jobRecords[job].jobArguments[res].argComment);
 			}
-			printf("-----------------------------------------------\n")
+			printf("-----------------------------------------------\n");
 		}
 
 		for (int res = 0; res < jobRecords[job].numJobResults; res++)

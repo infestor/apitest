@@ -11,9 +11,10 @@ class Ecu
 {
 	private:
 		bool PRINT_DEBUG;
-		char ECU_NAME[50];
 
 	public:
+		char ECU_NAME[50];
+
 		Ecu(const char *ecuName = DEFAULT_ECU_NAME, bool debugEnabled = true);
 		void SetEcuName(const char *newEcuName);
 		char * GetEcuName(void);
