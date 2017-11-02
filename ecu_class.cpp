@@ -6,7 +6,7 @@
 #include "api.h"
 
 
-void Ecu::Ecu(const char ecuName, bool debugEnabled)
+void Ecu::Ecu(const char *ecuName, bool debugEnabled)
 {
 	strcpy(ECU_NAME, ecuName);
 	PRINT_DEBUG = debugEnabled;
