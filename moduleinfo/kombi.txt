@@ -1,0 +1,7 @@
+Using ecu: kombi
+
+Init..
+JOB: _JOBS (params: )
+Waiting for response..
+
+EDIABAS error (95): SYS-0005: OBJECT FILE NOT FOUND

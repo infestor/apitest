@@ -1,0 +1,87 @@
+Using ecu: mfl
+
+Init..
+JOB: _JOBS (params: )
+Waiting for response..
+TotalJobSets 8
+
+*****************************************************************************
+INFO
+(Information SGBD)
+  > ECU (string) | Steuergerät im Klartext
+  > ORIGIN (string) | Steuergeräte-Verantwortlicher
+  > REVISION (string) | Versions-Nummer
+  > AUTHOR (string) | Namen aller Autoren
+  > COMMENT (string) | wichtige Hinweise
+  > PACKAGE (string) | Include-Paket-Nummer
+  > SPRACHE (string) | deutsch, english
+
+INITIALISIERUNG
+(Init-Job fuer MFL E38)
+  > DONE (int) | 1 wenn Okay
+
+IDENT
+(Ident-Daten fuer MFL)
+  > JOB_STATUS (string) | OKAY, FEHLER
+  > ID_BMW_NR (string) | BMW-Teilenummer
+  > ID_HW_NR (int) | BMW-Hardwarenummer
+  > ID_COD_INDEX (int) | Codier-Index
+  > ID_DIAG_INDEX (int) | Diagnose-Index
+  > ID_BUS_INDEX (int) | Bus-Index
+  > ID_DATUM_KW (int) | Herstelldatum KW
+  > ID_DATUM_JAHR (int) | Herstelldatum Jahr
+  > ID_LIEF_NR (int) | Lieferanten-Nummer
+  > ID_SW_NR (int) | Softwarenummer
+  > ID_LIEF_TEXT (string) | Lieferantenname
+
+FS_LESEN
+(Fehlerspeicher lesen)
+  > JOB_STATUS (string) | OKAY, FEHLER
+  > F_ORT_NR (int) | Fehlercode
+  > F_ORT_TEXT (string) | Fehlerort als Text
+  > F_HFK (int) | Fehlerhaeufigkeit des jeweiligen Fehlers
+  > F_ART_ANZ (int) | Anzahl der Fehlerarten
+  > F_UW_ANZ (int) | Anzahl der Umweltbedingungen
+  > F_ART1_NR (int) | Index der 1. Fehlerart (entweder 0 oder 32)
+  > F_ART1_TEXT (string) | 1. Fehlerart als Text
+
+FS_LOESCHEN
+(Fehlerspeicher loeschen)
+  > JOB_STATUS (string) | OKAY, FEHLER
+
+STATUS_LESEN
+(alle Stati des MFL lesen)
+  > JOB_STATUS (string) | normalerweise OKAY
+  > STAT_RADIO_VARIANTE (int) | 0 -> MFL ohne Radio, 1 -> MFL mit Radio
+  > STAT_TELEFON_VARIANTE (int) | 0 -> MFL ohne Telefon, 1 -> MFL mit Telefon
+  > STAT_UMLUFT_VARIANTE (int) | 0 -> MFL ohne Umluft, 1 -> MFL mit Umluft
+  > STAT_TEMPOMAT_VARIANTE (int) | 0 -> MFL ohne Tempomat, 1 -> MFL mit Tempomat
+  > STAT_TEMP_WA_BETAETIGT (int) | rechte Taste Tempomat Wiederaufnahme betaetigt ?
+  > STAT_TEMP_SB_BETAETIGT (int) | rechte Taste Tempomat setzen beschleunigen betaetigt ?
+  > STAT_TEMP_VER_BETAETIGT (int) | rechte Taste Tempomat Verzoegerung betaetigt ?
+  > STAT_TEMP_AUS_BETAETIGT (int) | rechte Taste Tempomat aus betaetigt ?
+  > STAT_UMLUFT_BETAETIGT (int) | rechte Taste Umluft betaetigt ?
+  > STAT_SEEK_UP_BETAETIGT (int) | linke Taste Suchlauf aufwaerts betaetigt ?
+  > STAT_VOL_UP_BETAETIGT (int) | linke Taste Lautstaerke plus betaetigt ?
+  > STAT_VOL_DOWN_BETAETIGT (int) | linke Taste Lautstaerke minus betaetigt ?
+  > STAT_SEEK_DOWN_BETAETIGT (int) | linke Taste Suchlauf abwaerts betaetigt ?
+  > STAT_R_T_BETAETIGT (int) | linke Taste Radio_Telefon betaetigt ?
+  > STAT_TELEFON_BETAETIGT (int) | linke Taste Telefon betaetigt ?
+  > STAT_U_SG_WERT (long) | Betriebsspannung am MFL_SG in Volt
+  > STAT_U_SG_EINH (string) | Einheit zur Betriebsspannung am MFL_SG in Volt
+  > STAT_U_SCHALTER_WERT (long) | Betriebsspannung am Schalter
+  > STAT_U_SCHALTER_EINH (string) | Einheit zur Betriebsspannung am Schalter in Volt
+
+HERSTELLDATEN_LESEN
+(Herstelldaten lesen)
+  > JOB_STATUS (string) | Status der Kommunikation (z.B. ACK)
+  > BYTE1 (int) | Datenbyte 1
+  > BYTE2 (int) | Datenbyte 2
+  > BYTE3 (int) | Datenbyte 3
+  > BYTE4 (int) | Datenbyte 4
+
+DIAGNOSE_ENDE
+(Diagnose beenden)
+  > JOB_STATUS (string) | OKAY, FEHLER
+
+

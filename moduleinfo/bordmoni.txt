@@ -1,0 +1,140 @@
+Using ecu: bordmoni
+
+Init..
+JOB: _JOBS (params: )
+Waiting for response..
+TotalJobSets 15
+
+*****************************************************************************
+INFO
+(Info fuer Anwender)
+  > ECU (string) | Steuergerat im Klartext
+  > ORIGIN (string) | Steuergeraete-Verantwortlicher
+  > REVISION (string) | Versions-Nummer
+  > AUTHOR (string) | Namen aller Autoren
+  > COMMENT (string) | wichtige Hinweise
+  > SPRACHE (string) | deutsch / english
+
+INITIALISIERUNG
+(Init-Job Bordmonitor Bedienteil-Teil)
+  > DONE (int) | 1 wenn Okay
+
+IDENT
+(Ident-Daten fuer Bordmonitor Bedienteil-Teil)
+  > JOB_STATUS (string) | Normalerweise "OKAY")
+  > ID_BMW_NR (string) | BMW-Teilenummer
+  > ID_HW_NR (string) | BMW-Hardwarenummer
+  > ID_COD_INDEX (string) | Codier-Index
+  > ID_DIAG_INDEX (string) | Diagnose-Index
+  > ID_BUS_INDEX (string) | Bus-Index
+  > ID_DATUM_KW (string) | Herstelldatum KW
+  > ID_DATUM_JAHR (string) | Herstelldatum Jahr
+  > ID_LIEF_NR (string) | Lieferant-Nummer
+  > ID_LIEF_TEXT (string) | Lieferant im Klartext
+  > ID_SW_NR (string) | Softwarenummer
+  > ID_AI_INDEX (string) | Aenderungsindex
+  > _TEL_ANTWORT (binary) | 
+
+FS_LESEN
+(Fehlerspeicher lesen)
+  > JOB_STATUS (string) | normalerweise OKAY
+  > F_ORT_NR (int) | Ausgabe Fehlernummer
+  > F_ORT_TEXT (string) | Fehlerort als Text
+  > F_HFK (int) | Haeufigkeit des einzelnen Fehlers
+  > F_ART_ANZ (int) | Anzahl der Fehlerarten, hier keine
+  > F_UW_ANZ (int) | Anzahl der Umweltbedingen, hier keine
+  > _TEL_ANTWORT (binary) | Telegramm anzeigen
+
+CHECKSUMME_ABFRAGEN
+()
+  > JOB_STATUS (string) | normalerweise OKAY
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_DIGITAL
+(Ansteuern mehrerer digitaler Ausgaenge)
+ << TEL_LED_GELB (string) | Ansteuerung gelbe LED
+ << TEL_LED_ROT (string) | Ansteuerung rote LED
+ << TEL_LED_GRUEN (string) | Ansteuerung gruene LED
+ << LED_RADIO (string) | Ansteuerung LED Radio
+ << LED_HEIZ_UHR (string) | Ansteuerun LED Heizung und Uhr
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, FEHLER
+  > _AUFTRAG1 (binary) | Anforderungstelegramm
+  > _ANTWORT1 (binary) | Antworttelegramm
+
+SONDERJOB
+()
+  > JOB_STATUS (string) | normalerweise OKAY
+  > _TEL_SENDE (binary) | 
+  > _ANTWORT1 (binary) | Antworttelegramm
+
+SELBSTTEST
+(Selbsttest Bordmonitor Bedien-Teils)
+  > JOB_STATUS (string) | normalerweise "OKAY"
+
+STATUS_LESEN
+(Stati lesen am Bordmitor Bedien-Teil)
+  > JOB_STATUS (string) | normalerweiser OKAY
+  > STAT_KLEMME_R_EIN (int) | 
+  > STAT_KEYBOARD (int) | 
+  > STAT_MONITOR_DREHGEBER_SCHRITTE (int) | -32 bis 31
+  > STAT_VOLUME_DREHGEBER_SCHRITTE (int) | -32 bis 31
+  > STAT_LC_MONITOR_UEBERTEMP_WERT (int) | 
+  > STAT_SPANNUNG_UBATT_WERT (real) | 
+  > STAT_SPANNUNG_UBATT_EINH (string) | Volt?
+  > STAT_DIMMER_KL_58g_WERT (real) | 
+  > STAT_DIMMER_KL_58g_EINH (string) | volt
+  > STAT_NFT2_WERT (int) | 
+  > STAT_NFT3_WERT (int) | 
+  > STAT_NFT4_WERT (int) | 
+  > STAT_NFT1_WERT (int) | 
+  > STAT_FOTOSENSOR_WERT (int) | 
+  > STAT_FOTOSENSOR_EINH (string) | %
+  > STAT_HELLIGKEITSWERT_LC_MONITOR (int) | pulsweitenmodeliertes Signal, 0-255
+  > STAT_HEADROOMREGELUNG_KASSETTE (int) | pulsweitenmodeliertes Signal, 0-255
+  > _TEL_ANTWORT (binary) | 
+
+PRUEFSTEMPEL_LESEN
+(Auslesen des Pruefstempels)
+  > JOB_STATUS (string) | Status der Kommunikation (z.B. ACK)
+  > DATUM_1 (int) | kann beliebig verwendet werden
+  > DATUM_2 (int) | kann beliebig verwendet werden
+  > DATUM_3 (int) | kann beliebig verwendet werden
+  > _TEL_ANTWORT (binary) | 
+
+PRUEFSTEMPEL_SCHREIBEN
+(Daten in den Pruefstempel schreiben)
+ << DATUM_1 (int) | kann beliebig verwendet werden
+ << DATUM_2 (int) | kann beliebig verwendet werden
+ << DATUM_3 (int) | kann beliebig verwendet werden
+-----------------------------------------------
+  > JOB_STATUS (string) | Status der Kommunikation (z.B. ACK)
+  > _TEL_SENDE (binary) | 
+
+ENERGIESPARMODE
+(Einstellen des Energiesparmodes)
+ << PRODUKTIONSMODE (string) | "ein" -> Produktions Mode ein
+ << TRANSPORTMODE (string) | "ein" -> Transport Mode ein
+ << WERKSTATTMODE (string) | "ein" -> Werkstatt Mode ein
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_AUFTRAG (binary) | Hex-Auftrag an SG
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+SLEEP_MODE
+(SG in Sleep-Mode versetzen)
+ << ZEIT (real) | a) Zeit nach der das Steuergerät einschläft
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_AUFTRAG (binary) | Hex-Auftrag von SG
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+FS_LOESCHEN
+(Fehlerspeicher loeschen)
+  > JOB_STATUS (string) | normalerweise "OKAY"
+
+DIAGNOSE_ENDE
+(Diagnose beenden)
+  > JOB_STATUS (string) | "OKAY", wenn fehlerfrei
+
+

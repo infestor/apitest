@@ -1,0 +1,111 @@
+Using ecu: aic
+
+Init..
+JOB: _JOBS (params: )
+Waiting for response..
+TotalJobSets 13
+
+*****************************************************************************
+INFO
+(Information SGBD)
+  > ECU (string) | Steuergerät im Klartext
+  > ORIGIN (string) | Steuergeräte-Verantwortlicher
+  > REVISION (string) | Versions-Nummer
+  > AUTHOR (string) | Namen aller Autoren
+  > COMMENT (string) | wichtige Hinweise
+  > PACKAGE (string) | Include-Paket-Nummer
+  > SPRACHE (string) | deutsch, english
+
+INITIALISIERUNG
+(Initialisierung und Kommunikationsparameter DS2)
+  > DONE (int) | 1, wenn Okay
+
+IDENT
+(Identdaten)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > ID_BMW_NR (string) | BMW-Teilenummer
+  > ID_HW_NR (int) | BMW-Hardwarenummer
+  > ID_COD_INDEX (int) | Codier-Index
+  > ID_DIAG_INDEX (int) | Diagnose-Index
+  > ID_BUS_INDEX (int) | Bus-Index
+  > ID_DATUM_KW (int) | Herstelldatum KW
+  > ID_DATUM_JAHR (int) | Herstelldatum Jahr
+  > ID_LIEF_NR (int) | Lieferanten-Nummer
+  > ID_LIEF_TEXT (string) | Lieferanten-Nummer
+  > ID_SW_NR (int) | Softwarenummer
+  > TELEGRAMM (binary) | Antworttelegramm
+
+FS_LOESCHEN
+(Fehlerspeicher loeschen)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+
+PRUEFSTEMPEL_LESEN
+(Auslesen des Pruefstempels)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > BYTE1 (int) | 0-255 bzw. 0x00-0xFF
+  > BYTE2 (int) | 0-255 bzw. 0x00-0xFF
+  > BYTE3 (int) | 0-255 bzw. 0x00-0xFF
+  > FG_ZIFFERN (string) | die letzten vier Stellen der Fahrgestellnummer
+  > TELEGRAMM (binary) | Antworttelegramm
+
+PRUEFSTEMPEL_SCHREIBEN
+(Beschreiben des Pruefstempels)
+ << BYTE1 (int) | 0-255 bzw. 0x00-0xFF
+ << BYTE2 (int) | 0-255 bzw. 0x00-0xFF
+ << BYTE3 (int) | 0-255 bzw. 0x00-0xFF
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+
+FS_LESEN
+(Fehlerspeicher lesen)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > F_ORT_NR (int) | Index fuer Fehlerort
+  > F_ORT_TEXT (string) | Fehlerort als Text
+  > F_HFK (int) | Fehlerhaeufigkeit
+  > F_ART_ANZ (int) | Anzahl der Fehlerarten
+  > F_UW_ANZ (int) | Anzahl der Umweltbedingungen
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+DIAGNOSE_ENDE
+(Diagnose beenden (DUMMY-Job))
+  > JOB_STATUS (string) | immer OKAY
+
+SPEICHER_LESEN
+(Lesen des internen Speichers)
+ << ADRESSE (int) | Bereich: 0-65535 bzw. 0x0000-0xFFFF
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > ZELLE (int) | Bereich: 0-255 bzw. 0x00-0xFF
+  > BYTE (binary) | Bereich: 0-255 bzw. 0x00-0xFF
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+SPEICHER_SCHREIBEN
+(Beschreiben des internen Speichers)
+ << ADRESSE (int) | Bereich: 0-65535 bzw. 0x0000-0xFFFF
+ << ZELLE (int) | Bereich: 0-255 bzw. 0x00-0xFF
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+AIC_INIT
+(Initialisieren des Regensensors)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_ANTWORT1 (binary) | Hex-Antwort von SG
+  > _TEL_ANTWORT2 (binary) | Hex-Antwort von SG
+  > _TEL_ANTWORT3 (binary) | Hex-Antwort von SG
+
+AIC_INIT_RSK_E46
+(Initialisieren des Rueckstellkontaktes)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+STATUS_LESEN
+(Stati des Regensensors)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > STAT_RSK (int) | 0, wenn Wischer in Parkstellung - sonst 1
+  > STAT_VERSTAERKUNG (int) | Verstaerkung in [dB]
+  > STAT_UEBERWISCHZEITPUNKT_1 (int) | Bereich: 0 bis 255
+  > STAT_UEBERWISCHZEITPUNKT_2 (int) | Bereich: 0 bis 255
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+

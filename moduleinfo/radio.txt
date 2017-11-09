@@ -1,0 +1,237 @@
+Using ecu: radio
+
+Init..
+JOB: _JOBS (params: )
+Waiting for response..
+TotalJobSets 35
+
+*****************************************************************************
+INFO
+(Information SGBD)
+  > ECU (string) | Steuergerät im Klartext
+  > ORIGIN (string) | Steuergeräte-Verantwortlicher
+  > REVISION (string) | Versions-Nummer
+  > AUTHOR (string) | Namen aller Autoren
+  > COMMENT (string) | wichtige Hinweise
+  > PACKAGE (string) | Include-Paket-Nummer
+  > SPRACHE (string) | deutsch, english
+
+ENERGIESPARMODE
+(Einstellen des Energiesparmodes)
+ << PRODUKTIONSMODE (string) | "ein" -> Produktions Mode ein
+ << TRANSPORTMODE (string) | "ein" -> Transport Mode ein
+ << WERKSTATTMODE (string) | "ein" -> Werkstatt Mode ein
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_AUFTRAG (binary) | Hex-Auftrag an SG
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+SLEEP_MODE
+(SG in Sleep-Mode versetzen)
+ << ZEIT (real) | a) Zeit nach der das Steuergerät einschläft
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_AUFTRAG (binary) | Hex-Auftrag von SG
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+INITIALISIERUNG
+(Init-Job fuer das Radio)
+  > DONE (int) | 1 wenn Okay
+
+IDENT
+(Identdaten)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > ID_BMW_NR (string) | BMW-Teilenummer
+  > ID_HW_NR (int) | BMW-Hardwarenummer
+  > ID_COD_INDEX (int) | Codier-Index
+  > ID_DIAG_INDEX (int) | Diagnose-Index
+  > ID_BUS_INDEX (int) | Bus-Index
+  > ID_DATUM_KW (int) | Herstelldatum KW
+  > ID_DATUM_JAHR (int) | Herstelldatum Jahr
+  > ID_LIEF_NR (int) | Lieferanten-Nummer
+  > ID_LIEF_TEXT (string) | Lieferanten-Nummer
+  > ID_SW_NR (int) | Softwarenummer
+  > TELEGRAMM (binary) | Antworttelegramm
+  > ID_GERAETE_NAME (string) | Entwicklungsbezeichnung des Radios ohne Unterstrich
+  > ID_RADIO_NAME (string) | Entwicklungsbezeichnung des Radios mit Unterstrich
+  > ID_TASTE_DIAG (string) | auslesen des Tastaturstatus moeglich
+  > ID_SUCHSCHWELLE_DIAG (string) | auslesen des Suchlaufschwellenstatus moeglich
+  > ID_VF_DIAG (string) | auslesen des VF-Status moeglich
+  > ID_AN_AUS_DIAG (string) | auslesen ob Radio ein aus moeglich
+
+FS_LESEN
+(Fehlerspeicher lesen)
+  > JOB_STATUS (string) | OKAY, FEHLER
+  > F_HEX_CODE (binary) | Fehlerdaten pro Fehler als Hexcode
+  > F_ORT_NR (int) | Fehlercode
+  > F_ORT_TEXT (string) | Fehlerort als Text
+  > F_HFK (int) | Fehlerhaeufigkeit des jeweiligen Fehlers
+  > F_ART_ANZ (int) | Anzahl der Fehlerarten
+  > F_UW_ANZ (int) | Anzahl der Umweltbedingungen
+  > F_ART1_NR (int) | Index der 1. Fehlerart (entweder 0 oder 32)
+  > F_ART1_TEXT (string) | 1. Fehlerart als Text
+
+FS_LOESCHEN
+(Fehlerspeicher loeschen)
+  > JOB_STATUS (string) | OKAY, FEHLER
+
+STATUS_LESEN
+(alle Stati des RADIO lesen)
+  > JOB_STATUS (string) | normalerweise OKAY
+  > STAT_RADIO_TASTE_BETAETIGT (int) | 0 -> keine Taste betaetigt, 1 -> bel. Taste betaetigt
+  > STAT_TELEFON_MUTE_AKTIV (int) | 0 -> Mute inaktiv, 1 -> Mute aktiv
+  > STAT_GAL_KURVE (int) | Gal-Kurve 1,2,3,4 eingestellt
+  > STAT_SEEK_SCHWELLE (int) | Suchlaufschwelle 1:empfindlich oder 2:unempfindlich
+  > STAT_MIT_DSP (int) | DSP verbaut oder nicht verbaut
+  > STAT_VF_LAUT_WERT (int) | Zahlenwert der VF-Lautstaerke (inkl. Vorzeichen)
+  > STAT_GAL_GESCHW_WERT (int) | Zahlenwert Geschw.-abhaengige Lautstaerkenregelung-Frequenz
+  > STAT_GAL_GESCHW_EINH (string) | Einheit der GAL-Geschwindigkeit (Km/h)
+  > STAT_FELDSTAERKE_WERT (int) | FELDSTAERKE des empf. Senders (relativ, 0-15)
+  > STAT_RADIO_EIN (int) | 1: Radio ist eingeschaltet
+  > STAT_AUXADAPTER (int) | responds as integer, if aux adapter is present
+  > STAT_AUXADAPTER_TEXT (string) | responds as text, if aux adapter is present
+  > STAT_ANTENNENDIVERSITY (int) | responds as integer, if antennea diversity is present
+  > STAT_ANTENNENDIVERSITY_TEXT (string) | responds as text, if antennea diversity is present
+
+STEUERN_DEFAULT_SOUND
+(Balance, Fader und Volume Defaulteinstellung)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_FADER_LV
+(Ansteuerung des Kanals links vorne)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_FADER_RV
+(Ansteuerung des Kanals rechts vorne)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_FADER_RH
+(Ansteuerung des Kanals rechts hinten)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_FADER_LH
+(Ansteuerung des Kanals links hinten)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_VOL_UP
+(Lautstaerkeerhoehung um 11dB/s)
+ << INKREMENTE (int) | Anzahl der Telegramme die geschickt werden (default 1)
+-----------------------------------------------
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_VOL_DOWN
+(Lautstaerkenabsenkung um 11dB/s)
+ << INKREMENTE (int) | Anzahl der Telegramme die geschickt werden (default 1)
+-----------------------------------------------
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_SEEK_UP
+(Suchlauf aufwaerts)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_SEEK_DOWN
+(Suchlauf abwaerts)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_AUDIO_KEY
+(Audio-Taste betaetigen)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_GAL_DEK
+(GAL-WERT dekrementieren)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_GAL_INK
+(GAL-WERT inkrementieren)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_VF_DEK
+(VF-Mindestlautstaerke dekrementieren)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_VF_INK
+(VF-Mindestlautstaerke inkrementieren)
+  > JOB_STATUS (string) | normalerweise OKAY
+
+STEUERN_FREQUENZ
+(einstellen der Radiofrequenz)
+ << FREQUENZ (string) | Frequenz in KHz 0 - 999999
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+
+STEUERN_RADIO_POWER
+(Ein-/Ausschalten des Radios)
+ << ARG1 (string) | EIN/AUS,ON/OFF
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+
+HERSTELLDATEN_LESEN
+(Herstelldaten lesen)
+  > JOB_STATUS (string) | Status der Kommunikation (z.B. ACK)
+  > SERIEN_NR (string) | Seriennummer vom Hersteller
+
+DIAGNOSE_ENDE
+(Diagnose beenden)
+  > JOB_STATUS (string) | Ergebnis ist immer OKAY, da nur Dummy
+
+FG_LESEN
+(Auslesen des Pruefstempels und Interpretation als FG-Nummer)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > FG_NR (string) | Fahrgestellnummer
+  > _TEL_ANTWORT (binary) | 
+
+COD_LESEN
+(Auslesen der Codierung Radio)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > COD_DATEN (string) | die 4 Codierbytes
+  > COD_LAENDERVARIANTE (string) | Laendervariante des Radios
+
+C_FG_LESEN
+(Auslesen des Pruefstempels und Interpretation als FG-Nummer)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > FG_NR (string) | Fahrgestellnummer
+  > _TEL_ANTWORT (binary) | 
+
+C_FG_AUFTRAG
+(Beschreiben des Pruefstempels mit der FG-Nummer)
+ << FG_NR (string) | Fahrgestellnummer (18-stellig)
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_ANTWORT (binary) | 
+
+C_C_LESEN
+(Codierdaten lesen)
+ << BINAER_BUFFER (binary) | Codierdaten
+-----------------------------------------------
+  > CODIER_DATEN (binary) | Codierdaten
+  > JOB_STATUS (string) | OKAY, ERROR_..
+
+C_C_AUFTRAG
+(Codierdaten schreiben und verifizieren)
+ << BINAER_BUFFER (binary) | Codierdaten
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+
+STEUERN_RADIO_SCHALTEN
+(Ein-/Ausschalten des Radios)
+ << SCHALTMODUS (string) | EIN/AUS-Schalten des Radios
+-----------------------------------------------
+  > MODUS (string) | Ein/aus-Status
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+STATUS_ANT_QFS
+(Auslesen des Status Quality Fieldstrength)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > STAT_QUALITY (int) | Quality
+  > STAT_FIELDSTRENGTH (int) | Fieldstrength
+  > STAT_ANT_PW (int) | Antenna Power Supply
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+SER_NR_DOM_LESEN
+(Seriennummer 14-stellig lesen)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > SER_NR_DOM (string) | Seriennummer Gerät 14-stellig
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+

@@ -1,0 +1,182 @@
+Using ecu: lwr2a
+
+Init..
+JOB: _JOBS (params: )
+Waiting for response..
+TotalJobSets 16
+
+*****************************************************************************
+INFO
+(Information SGBD)
+  > ECU (string) | Steuergerät im Klartext
+  > ORIGIN (string) | Steuergeräte-Verantwortlicher
+  > REVISION (string) | Versions-Nummer
+  > AUTHOR (string) | Namen aller Autoren
+  > COMMENT (string) | wichtige Hinweise
+  > PACKAGE (string) | Include-Paket-Nummer
+  > SPRACHE (string) | deutsch, english
+
+INITIALISIERUNG
+(Default init job)
+  > DONE (int) | 1 if done
+
+IDENT
+(Default ident job)
+  > JOB_STATUS (string) | 
+  > ID_BMW_NR (string) | BMW-Teilenummer
+  > ID_HW_NR (int) | Hardwarenummer
+  > ID_COD_INDEX (int) | Codierindex
+  > ID_DIAG_INDEX (int) | Diagnoseindex
+  > ID_BUS_INDEX (int) | Busindex
+  > ID_DATUM_KW (int) | Herstelldatum KW
+  > ID_DATUM_JAHR (int) | Herstelldatum Jahr
+  > ID_LIEF_NR (int) | Lieferantennummer
+  > ID_LIEF_TEXT (string) | Lieferantenname
+  > ID_SW_NR (int) | Softwarenummer
+
+FS_LESEN
+(fs_lesen job)
+  > JOB_STATUS (string) | 
+  > F_ORT_TEXT (string) | 
+  > F_ORT_NR (int) | 
+  > F_ART_ANZ (int) | 
+  > F_UW_ANZ (int) | 
+  > F_UW1_NR (int) | Nummer der Umwltbedingung, hier immer 1
+  > F_UW1_EINH (string) | Aussentemperatur in Grad C
+  > F_UW1_WERT (int) | Wert der Umweltbedingung
+  > F_UW1_TEXT (string) | "Outside temperature"
+  > F_ART1_NR (int) | 
+  > F_ART1_TEXT (string) | Bit 0 aus Infospeicher
+  > F_ART2_NR (int) | 
+  > F_ART2_TEXT (string) | Bit 1 aus Infospeicher
+  > F_ART3_NR (int) | 
+  > F_ART3_TEXT (string) | Bit 2 aus Infospeicher
+  > F_ART4_NR (int) | 
+  > F_ART4_TEXT (string) | Bit 3 aus Infospeicher
+  > F_ART5_NR (int) | 
+  > F_ART5_TEXT (string) | Bit 4 aus Infospeicher
+  > F_ART6_NR (int) | 
+  > F_ART6_TEXT (string) | Bit 5 aus Infospeicher
+  > F_ART7_NR (int) | 
+  > F_ART7_TEXT (string) | Bit 6 aus Infospeicher
+  > F_ART8_NR (int) | 
+  > F_ART8_TEXT (string) | Fehler momentan vorhanden J/N
+  > F_HFK (int) | 
+  > F_HEX_CODE (binary) | Hex-Daten des Fehlers
+  > _INFOSPEICHER (binary) | 
+
+FS_LOESCHEN
+(Default FS_LOESCHEN job)
+  > JOB_STATUS (string) | 
+
+IS_LESEN
+(Default IS_LESEN job)
+  > JOB_STATUS (string) | 
+  > _ANTWORT (binary) | Inhalt Antworttelegramm
+  > INFOSPEICHER (binary) | Inhalt Infospeicher
+  > FEHLER_KLEMME30_AKTIV (int) | Byte1, Bit0
+  > FEHLER_IRQ_AKTIV (int) | Byte1, Bit1
+  > FEHLER_RESET_AKTIV (int) | Byte1, Bit2
+  > FEHLER_SENSORVERSORGUNG_AKTIV (int) | Byte1, Bit3
+  > FEHLER_DREHZAHLFUEHLER_VORN_RECHTS_SPRUNG_AKTIV (int) | Byte1, Bit4
+  > FEHLER_DREHZAHLFUEHLER_VORN_RECHTS_UEBERLAUF_AKTIV (int) | Byte1, Bit5
+  > DIAGNOSE_ODER_TELEGRAMMFEHLER_AKTIV (int) | Byte1, Bit6
+  > FEHLER_SENSORVERSORGUNG_ZU_GROSS_AKTIV (int) | Byte2, Bit0
+  > FEHLER_SENSORSIGNAL_VORNE_ZU_KLEIN_AKTIV (int) | Byte2, Bit1
+  > FEHLER_SENSORSIGNAL_ZU_GROSS_AKTIV (int) | Byte2, Bit2
+  > FEHLER_SENSORSIGNAL_HINTEN_ZU_KLEIN_AKTIV (int) | Byte2, Bit4
+  > FEHLER_SENSORSIGNAL_HINTEN_ZU_GROSS_AKTIV (int) | Byte2, Bit5
+  > FEHLER_MOTOR_RECHTS_KURZSCHLUSS_WICKLUNG_1_AKTIV (int) | Byte3, Bit0
+  > FEHLER_MOTOR_RECHTS_KURZSCHLUSS_WICKLUNG_2_AKTIV (int) | Byte3, Bit1
+  > FEHLER_MOTOR_RECHTS_OPEN_LOAD_WICKLUNG_1_AKTIV (int) | Byte3, Bit2
+  > FEHLER_MOTOR_RECHTS_OPEN_LOAD_WICKLUNG_2_AKTIV (int) | Byte3, Bit3
+  > FEHLER_MOTOR_RECHTS_TEMPERATUR_PREALARM_AKTIV (int) | Byte3, Bit4
+  > FEHLER_MOTOR_LINKS_KURZSCHLUSS_WICKLUNG_1_AKTIV (int) | Byte4, Bit0
+  > FEHLER_MOTOR_LINKS_KURZSCHLUSS_WICKLUNG_2_AKTIV (int) | Byte4, Bit1
+  > FEHLER_MOTOR_LINKS_OPEN_LOAD_WICKLUNG_1_AKTIV (int) | Byte4, Bit2
+  > FEHLER_MOTOR_LINKS_OPEN_LOAD_WICKLUNG_2_AKTIV (int) | Byte4, Bit3
+  > FEHLER_MOTOR_LINKS_TEMPERATUR_PREALARM_AKTIV (int) | Byte4, Bit4
+  > ZAEHLER_SG_FEHLER (int) | Byte5, Bit0 und 1
+  > ZAEHLER_MOTOR_RECHTS_FEHLER (int) | Byte5, Bit2 und 3
+  > ZAEHLER_MOTOR_LINKS_FEHLER (int) | Byte5, Bit4 und 5
+
+CODIERDATEN_LESEN
+(Default CODIERDATEN_LESEN job)
+ << BLOCK (int) | auszulesender Codierdatenblock
+-----------------------------------------------
+  > JOB_STATUS (string) | 
+  > DATENFELD (binary) | Inhalt Codierdatenblock
+
+SPEICHER_LESEN
+(Default SPEICHER_LESEN job)
+ << SEGMENT (int) | Speicher-Segment (0 bis ??)
+ << HIGH (int) | high-Adresse (0 bis ff)
+ << MIDDLE (int) | middle-Adresse (0 bis ff)
+ << LOW (int) | low-Adresse (0 bis ff)
+ << BYTES (int) | Anzahl Bytes (maximal 31)
+-----------------------------------------------
+  > JOB_STATUS (string) | 
+  > DATENFELD (binary) | Inhalt Speicherblock
+
+STATUS_LESEN
+(STATUS_LESEN job)
+  > JOB_STATUS (string) | 
+  > STAT_REGELUNG_SCHNELL_AKTIV (int) | Wert Statusbyte 1, Bit 0, schnelle Regelung
+  > STAT_VERSORGUNGSSPANNUNG_ZU_KLEIN_AKTIV (int) | Wert Statusbyte 1, Bit 1, Versorgungsspannung <11,3V
+  > STAT_IRQ_FEHLER_AKTIV (int) | Wert Statusbyte 1, Bit 2, Interrupt
+  > STAT_RESET_AKTIV (int) | Wert Statusbyte 1, Bit 3, SG Reset
+  > STAT_SENSORVERSORGUNG_AKTIV (int) | Wert Statusbyte 1, Bit 4, Sensorversorung
+  > STAT_TACHO_A_SIGNAL_SPRINGT_AKTIV (int) | Wert Statusbyte 1, Bit 5
+  > STAT_TACHO_A_SIGNAL_UEBERLAUF_AKTIV (int) | Wert Statusbyte 1, Bit 6
+  > STAT_DIAGNOSEFEHLER_AKTIV (int) | Wert Statusbyte 1, Bit 7
+  > STAT_FAHRLICHT_EIN (int) | Wert Statusbyte 2, Bit 1
+  > STAT_FERNLICHT_EIN (int) | Wert Statusbyte 2, Bit 2
+  > STAT_REGELUNGSSTOP_MOTORFEHLER_AKTIV (int) | Wert Statusbyte 2, Bit 4
+  > _ANTWORT (binary) | Antworttelegramm
+
+STATUS_SENSOR_LESEN
+(STATUS_SENSOR_LESEN job)
+  > JOB_STATUS (string) | 
+  > STAT_SENSOR_VORN_WERT (int) | Status Sensor vorn
+  > STAT_SENSOR_VORN_EINH (string) | [Volt]
+  > STAT_SENSOR_HINTEN_WERT (int) | Status Sensor hinten
+  > STAT_SENSOR_HINTEN_EINH (string) | [Volt]
+
+STEUERN_ANTRIEBE
+(STEUERN_ANTRIEBE job)
+ << ZIELWERT1 (int) | anzusteuernder ZIELWERT 1 (Bereich 0 bis 1024)
+ << ZIELWERT2 (int) | anzusteuernder Zielwert 2
+-----------------------------------------------
+  > JOB_STATUS (string) | 
+
+HERSTELLER_LESEN
+(Default hersteller_lesen job)
+  > JOB_STATUS (string) | 
+  > HERSTELLERDATEN (binary) | Daten des Herstellerfeldes
+
+PRUEFSTEMPEL_LESEN
+(Default pruefstempel_lesen job)
+  > JOB_STATUS (string) | 
+  > BYTE1 (int) | 
+  > BYTE2 (int) | 
+  > BYTE3 (int) | 
+
+PRUEFSTEMPEL_SCHREIBEN
+(Default pruefstempel_setzen job)
+ << BYTE1 (int) | 0x00 bis 0xFF
+ << BYTE2 (int) | 0x00 bis 0xFF
+ << BYTE3 (int) | 0x00 bis 0xFF
+-----------------------------------------------
+  > JOB_STATUS (string) | 
+
+DREHSINN_SENSOREN_LESEN
+(DIAGNOSE_ENDE job)
+  > JOB_STATUS (string) | 
+  > COD_DREHSINN_SENSOR_VORN_POSITIV (int) | 
+  > COD_DREHSINN_SENSOR_HINTEN_POSITIV (int) | 
+
+DIAGNOSE_ENDE
+(DIAGNOSE_ENDE job)
+  > JOB_STATUS (string) | 
+
+

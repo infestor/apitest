@@ -1,0 +1,75 @@
+Using ecu: zis
+
+Init..
+JOB: _JOBS (params: )
+Waiting for response..
+TotalJobSets 9
+
+*****************************************************************************
+ENERGIESPARMODE
+(Einstellen des Energiesparmodes)
+ << PRODUKTIONSMODE (string) | "ein" -> Produktions Mode ein
+ << TRANSPORTMODE (string) | "ein" -> Transport Mode ein
+ << WERKSTATTMODE (string) | "ein" -> Werkstatt Mode ein
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_AUFTRAG (binary) | Hex-Auftrag an SG
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+INFO
+(Info fuer Anwender)
+  > ECU (string) | Steuergerat im Klartext
+  > ORIGIN (string) | Steuergeraete-Verantwortlicher
+  > REVISION (string) | Versions-Nummer
+  > AUTHOR (string) | Namen aller Autoren
+  > COMMENT (string) | wichtige Hinweise
+  > SPRACHE (string) | deutsch / english
+
+INITIALISIERUNG
+(Init-Job fuer ZIS E38)
+  > DONE (int) | 1 wenn Okay
+
+IDENT
+(Ident-Daten fuer Front-ZIS)
+  > JOB_STATUS (string) | Status der Kommunikation (z.B. ACK)
+  > ID_BMW_NR (string) | BMW-Teilenummer
+  > ID_HW_NR (int) | BMW-Hardwarenummer
+  > ID_COD_INDEX (int) | Codier-Index
+  > ID_DIAG_INDEX (int) | Diagnose-Index
+  > ID_BUS_INDEX (int) | Bus-Index
+  > ID_DATUM_KW (int) | Herstelldatum KW
+  > ID_DATUM_JAHR (int) | Herstelldatum Jahr
+  > ID_LIEF_NR (int) | Lieferanten-Nummer
+  > ID_SW_NR (int) | Softwarenummer
+  > ID_LIEF_TEXT (string) | Lieferantenname
+
+FS_LESEN
+(Fehlerspeicher lesen)
+  > JOB_STATUS (string) | OKAY, FEHLER
+  > F_ORT_NR (int) | Fehlercode
+  > F_ORT_TEXT (string) | Fehlerort als Text
+  > F_HFK (int) | Fehlerhaeufigkeit des jeweiligen Fehlers
+  > F_ART_ANZ (int) | Anzahl der Fehlerarten
+  > F_UW_ANZ (int) | Anzahl der Umweltbedingungen
+  > F_ART1_NR (int) | Index der 1. Fehlerart (entweder 0 oder 32)
+  > F_ART1_TEXT (string) | 1. Fehlerart als Text
+
+FS_LOESCHEN
+(Fehlerspeicher loeschen)
+  > JOB_STATUS (string) | OKAY, FEHLER
+
+ZIS_VERSION
+(ZIS-Variante auslesen)
+  > JOB_STATUS (string) | OKAY, FEHLER
+  > VARIANTE (string) | AUDIO | TELEFON | BC
+  > VARIANTEN_NR (string) | Nr der Variante fuer ELDI!
+
+SLEEP_MODE
+(SG in Sleep-Mode versetzen)
+  > JOB_STATUS (string) | OKAY, FEHLER
+
+DIAGNOSE_ENDE
+(Diagnose beenden)
+  > JOB_STATUS (string) | OKAY, FEHLER
+
+

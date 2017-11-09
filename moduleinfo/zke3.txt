@@ -1,0 +1,1078 @@
+Using ecu: zke3
+
+Init..
+JOB: _JOBS (params: )
+Waiting for response..
+TotalJobSets 76
+
+*****************************************************************************
+INFO
+(Information SGBD)
+  > ECU (string) | Steuergerät im Klartext
+  > ORIGIN (string) | Steuergeräte-Verantwortlicher
+  > REVISION (string) | Versions-Nummer
+  > AUTHOR (string) | Namen aller Autoren
+  > COMMENT (string) | wichtige Hinweise
+  > PACKAGE (string) | Include-Paket-Nummer
+  > SPRACHE (string) | deutsch, english
+
+ENERGIESPARMODE
+(Einstellen des Energiesparmodes)
+ << PRODUKTIONSMODE (string) | "ein" -> Produktions Mode ein
+ << TRANSPORTMODE (string) | "ein" -> Transport Mode ein
+ << WERKSTATTMODE (string) | "ein" -> Werkstatt Mode ein
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_AUFTRAG (binary) | Hex-Auftrag an SG
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+SLEEP_MODE
+(SG in Sleep-Mode versetzen)
+ << ZEIT (real) | a) Zeit nach der das Steuergerät einschläft
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > _TEL_AUFTRAG (binary) | Hex-Auftrag von SG
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+INITIALISIERUNG
+(Default init job)
+  > DONE (int) | 1 if done
+
+IDENT
+(Ident-Daten fuer GM III)
+ << P_MODUL (string) | gewuenschtes Peripheriemodul
+-----------------------------------------------
+  > JOB_STATUS (string) | Status der Kommunikation
+  > ID_BMW_NR (string) | BMW-Teilenummer
+  > ID_HW_NR (int) | BMW-Hardwarenummer
+  > ID_COD_INDEX (int) | Codier-Index
+  > ID_DIAG_INDEX (int) | Diagnose-Index
+  > ID_BUS_INDEX (int) | Bus-Index
+  > ID_DATUM_KW (int) | Herstelldatum KW
+  > ID_DATUM_JAHR (int) | Herstelldatum Jahr
+  > ID_LIEF_NR (int) | Lieferanten-Nummer
+  > ID_LIEF_TEXT (string) | Lieferanten-Text
+  > ID_SW_NR (int) | Softwarenummer
+  > _TEL_ANTWORT (binary) | 
+
+FS_LESEN
+(Fehlerspeicher lesen)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > F_ORT_NR (int) | momentan identisch Fehlerbyte
+  > F_ORT_TEXT (string) | Fehlerort als Text
+  > F_HFK (int) | Wertebereich 0 - 31
+  > F_ART_ANZ (int) | immer 1
+  > F_UW_ANZ (int) | immer 0
+  > F_ART1_NR (int) | momentan identisch Art-Bit
+  > F_ART1_TEXT (string) | Fehlerart als Text
+  > _TEL_ANTWORT0 (binary) | 
+  > _TEL_ANTWORT1 (binary) | 
+  > _TEL_ANTWORT2 (binary) | 
+
+FS_LOESCHEN
+(Fehlerspeicher loeschen)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_ANTWORT (binary) | 
+
+DIAGNOSE_ENDE
+(Diagnose beenden)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_ANTWORT (binary) | 
+
+PRUEFSTEMPEL_LESEN
+(Auslesen des Pruefstempels)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > BYTE1 (int) | kann beliebig verwendet werden
+  > BYTE2 (int) | kann beliebig verwendet werden
+  > BYTE3 (int) | kann beliebig verwendet werden
+  > _TEL_ANTWORT (binary) | 
+
+PRUEFSTEMPEL_SCHREIBEN
+(Beschreiben des Pruefstempels)
+ << BYTE1 (int) | kann beliebig verwendet werden
+ << BYTE2 (int) | kann beliebig verwendet werden
+ << BYTE3 (int) | kann beliebig verwendet werden
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+HERSTELLDATEN_LESEN
+(Auslesen der Herstelldaten)
+ << P_MODUL (string) | Name des gewuenschten Peripherie-Moduls
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > BYTE1 (int) | kann beliebig verwendet werden
+  > BYTE2 (int) | kann beliebig verwendet werden
+  > BYTE3 (int) | kann beliebig verwendet werden
+  > BYTE4 (int) | kann beliebig verwendet werden
+  > _TEL_ANTWORT (binary) | 
+
+COD_LESEN_ALLGEMEIN
+(Auslesen der allgemeinen Codierdaten des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > COD_MIT_SIR (int) | Scheibenintensivreinigung
+  > COD_MIT_SRA (int) | Scheinwerferreinigung
+  > COD_MIT_ADV (int) | Anpressdruckverstellung
+  > COD_MIT_SERVO (int) | Servotronik
+  > COD_MIT_TSH (int) | Tuerschlossheizung
+  > COD_MIT_SP_EINKLAPPEN (int) | Spiegel einklappen
+  > COD_MIT_SP_HEIZUNG (int) | Spiegel-Heizung
+  > COD_MIT_SP_MEMORY (int) | Spiegel-Memory
+  > COD_MIT_SCA_HK (int) | Soft-Close-Automatik Heckklappe
+  > COD_MIT_AUTO_ZV_8KMH (int) | automatisch ZV verriegeln ab 8 km/h
+  > COD_MIT_FHH (int) | elektrische Fensterheber hinten
+  > COD_MIT_LSM (int) | Lenksaeulenmemory
+  > COD_MIT_GLAS_SHD (int) | Glasdach
+  > COD_MIT_IRF_BT (int) | Infrarot-Fernbedienung an Beifahrertuer
+  > COD_MIT_HK_NICHT_ENTSICHERN (int) | Heckklappe nicht entsichern
+  > COD_FZG_TYP (string) | Fahrzeugtyp: E38, E39
+  > COD_E39_2_HECK_FKT (int) | E39/2: Heckklappen-, Heckscheibenfunktion
+  > COD_BC_WS_IGNORIEREN (int) | BC-Anforderung Wegfahrsicherung ignorieren
+  > COD_MIT_SHD (int) | mit Schiebehebedach
+  > COD_MIT_SM (int) | mit Sitzmemory
+  > COD_MIT_SMBF (int) | mit Sitzmemory Beifahrer
+  > COD_MIT_SB_FOND (int) | mit Schalterblock Fond
+  > COD_FH_LA_AB (string) | Laendervariante der Fensterheber-Abschaltung
+  > COD_FH_KFO_INAKTIV (int) | Komfortoeffnung bei Fensterheber
+  > COD_FH_KFS_INAKTIV (int) | Komfortschliessung bei Fensterheber
+  > COD_WI_INT_STILL (string) | Wischerintervallzeit bei Stillstand
+  > COD_WI_OHNE_POTI (int) | Wischerintervall ohne Potentiometer
+  > COD_IL_OHNE_SOFT (int) | ohne Soft On/Off bei Innenlicht
+  > COD_MIT_SEL_ZV (int) | selektive Zentralverriegelung
+  > COD_MIT_DWA (int) | 1, wenn Diebstahlwarnanlage aktiviert
+  > COD_NG_AKTIV (int) | 1, wenn Neigungsgeber aktiviert
+  > COD_INRS_AKTIV (int) | 1, wenn Innenraumschutz aktiviert
+  > COD_S_E_MIT_FERNBED (int) | 1, wenn Schaerfen u. Entschaerfen nur ueber Fernbedienung
+  > COD_AKK_ALARM (string) | Intervallton oder Dauerton
+  > COD_OPT_ALARM_WARNBL (int) | 1, wenn optischer Alarm mit Warnblinkern
+  > COD_OPT_ALARM_ABBLLI (int) | 1, wenn optischer Alarm mit Abblendlicht
+  > COD_OPT_ALARM_FERNLI (int) | 1, wenn optischer Alarm mit Fernlicht
+  > COD_MIT_SIRENE (int) | 1, wenn mit Notstromsirene
+  > COD_QS_WARNBL (int) | 1, wenn Quittierungssignal beim Schaerfen mit Warnblinker
+  > COD_QS_HORN (int) | 1, wenn Quit.-sign. beim Schaerfen mit DWA-Horn oder Sirene
+  > COD_QE_WARNBL (int) | 1, wenn Quittierungssignal beim Entschaerfen mit Warnblinker
+  > COD_QE_HORN (int) | 1, wenn Quit.-sign. beim Entschaerfen mit DWA-Horn oder Sirene
+  > COD_OHNE_NOTENTSCHAERFEN (int) | 1, wenn Entfall Notentschaerfen
+  > COD_AUTO_WS (int) | 1, wenn automatische Wegfahrsperre
+  > COD_REVERS_LANG (int) | 1, wenn langes Reversieren bei Einklemmung
+  > COD_SUEFV_DEAKTIV (int) | Scheibenueberwachung Fahrertuere vorne deaktiv
+  > COD_SUEFH_DEAKTIV (int) | COD_Scheibenueberwachung Fahrertuere hinten deaktiv
+  > COD_SUEBV_DEAKTIV (int) | Scheibenueberwachung Beifahrertuere vorne deaktiv
+  > COD_SUEBH_DEAKTIV (int) | Scheibenueberwachung Beifahrertuere hinten deaktiv
+  > COD_HSUE_DEAKTIV (int) | Heckscheibenueberwachung deaktiv
+  > COD_MIT_FUNK_IRS_H (int) | Funkinnenraumschutz hinten
+  > COD_TKV_AN_GM (string) | Tuerkontakt vorne an Grundmodul angeschlossen
+  > COD_LOGIK_TK (string) | Logik Tuerkontakte
+  > COD_FB_MIT_KFO (int) | Fernbedienung mit Komfortoeffnung
+  > COD_FB_MIT_KFS (int) | Fernbedienung mit Komfortschliessung
+  > COD_FB_MIT_AUTO_ZV (int) | Fernbedienung mit automatischer Verriegelung nach 2 min
+  > COD_FB_MIT_PANIK (int) | Fernbedienung mit Panik-Mode
+  > COD_FB_MIT_IL (int) | Fernbedienung mit Innenlicht an bei mehrmaligem Verriegeln
+  > COD_FB_MIT_ENTRIEGELN_KLR (int) | Fernbedienung mit Entriegeln bei Klemme R
+  > COD_FB_ZV_ENTRIEGELN_SCHLUESSEL (int) | Fernbedienung mit ZV entriegeln ueber Schluessel
+  > COD_FB_KBUS_SPERREN (int) | Fernbedienung sperren ueber K-Bus
+  > COD_BLOCK_0 (binary) | Codierdaten im Block 0
+  > DATENSICHERUNG_BLOCK_0 (string) | Datensicherungsbyte fuer Block 0
+  > CHECKSUMME_BLOCK_0 (int) | Checksumme fuer Block 0
+  > _TEL_ANTWORT (binary) | 
+
+COD_LESEN_SERVOTRONIK
+(Auslesen der Codierdaten des GM III (Block 1 und 2))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > COD_BLOCK_1 (binary) | Codierdaten im Block 1
+  > DATENSICHERUNG_BLOCK_1 (string) | Datensicherungsbyte fuer Block 1
+  > CHECKSUMME_BLOCK_1 (int) | Checksumme fuer Block 1
+  > COD_BLOCK_2 (binary) | Codierdaten im Block 2
+  > DATENSICHERUNG_BLOCK_2 (string) | Datensicherungsbyte fuer Block 2
+  > CHECKSUMME_BLOCK_2 (int) | Checksumme fuer Block 2
+  > _TEL_ANTWORT1 (binary) | 
+  > _TEL_ANTWORT2 (binary) | 
+
+INFOSPEICHER_LESEN
+(Infospeicher lesen)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > F_ORT_NR (int) | momentan identisch Fehlerbyte
+  > F_ORT_TEXT (string) | Fehlerort als Text
+  > F_HFK (int) | Wertebereich 0 - 31
+  > F_ART_ANZ (int) | immer 1
+  > F_UW_ANZ (int) | immer 0
+  > F_ART1_NR (int) | momentan identisch Art-Bit
+  > F_ART1_TEXT (string) | Fehlerart als Text
+  > _TEL_ANTWORT0 (binary) | 
+  > _TEL_ANTWORT1 (binary) | 
+  > _TEL_ANTWORT2 (binary) | 
+
+STATUS_DIGITAL_GM3_EA
+(Status der Digitalsignale des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_E_SFFHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SFFHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SIR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SFBHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SFBHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SCAO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_RSK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_NS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TOEHS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE (== E_NS)
+  > STAT_E_TOEHKI_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TOEHK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_HKK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TZV_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_VRHK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_KLR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_ERHK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_DSIR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TKFT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TKBT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TKFH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TKBH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SW1_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SW2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SWP_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SIB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MHK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_REE2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_HFK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_INRS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SUEFH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_FIS2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE (== E_SUEFH)
+  > STAT_E_SUEBH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_HSK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE (== E_SUEBH)
+  > STAT_E_NGEG_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_REE1_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_KL30GM_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_CS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_WS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_WI1_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_WI2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SRA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_IP_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_DWAL_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_NGAG_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_ANLE_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_RERHS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE (== E_ANLE)
+  > STAT_A_RERHK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MHKER_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MVR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MER_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MZS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MFFHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MFFHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MFBHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MFBHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_EN_RXD_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_AN_TXD_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_DWAH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_WP_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MADVZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MADVA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_VA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_WFSI_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SIRENE_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_TKFT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_TKBT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFN_FTOFFEN_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFN_BTOFFEN_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_DIGITAL_GM3_KP
+(Status der Digitalsignale des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_K_KLR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_K_KL15_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_K_KL50_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_K_KL58_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_DIGITAL_GM3_INT
+(Status der Digitalsignale des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_IFN_ZV_VERRIEGELT (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFN_ZV_GESICHERT (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_GM3
+(Status der Analogsignale des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_TACHOA_WERT (real) | aktuelle Geschwindigkeit ueber Tacho-A-Eingang
+  > STAT_TACHOA_EINH (string) | Einheit: 'km/h'
+  > STAT_KMH_WERT (real) | Geschwindigkeit ueber K-Bus
+  > STAT_KMH_EINH (string) | Einheit: 'km/h'
+  > STAT_TEMP_WERT (real) | Aussentemperatur ueber K-Bus
+  > STAT_TEMP_EINH (string) | Einheit: 'Grad Celsius'
+  > STAT_ISERV_WERT (real) | Strom im Servoventil
+  > STAT_ISERV_EINH (string) | Einheit: 'Milli-Ampere'
+  > STAT_ASERV_WERT (real) | PWM-Ansteuerung Servoventil
+  > STAT_ASERV_EINH (string) | Einheit: 'Prozent'
+  > STAT_AIB_WERT (real) | PWM-Ansteuerung Innenlicht
+  > STAT_AIB_EINH (string) | Einheit: 'Prozent'
+  > STAT_ADVP_WERT (real) | aktuelle ADV-Position
+  > STAT_ADVP_EINH (string) | Einheit: '1'
+  > STAT_GKL_WERT (real) | aktuelle Geschwindigkeitsklasse
+  > STAT_GKL_EINH (string) | Einheit: '1'
+  > STAT_IFHBH_WERT (real) | mom. Strom FH-Antrieb BT hinten
+  > STAT_IFHBH_EINH (string) | Einheit: 'Ampere'
+  > STAT_IFHFH_WERT (real) | mom. Strom FH-Antrieb FT hinten
+  > STAT_IFHFH_EINH (string) | Einheit: 'Ampere'
+  > STAT_IBHMAX_WERT (real) | max. Strom FH-Antrieb BT hinten
+  > STAT_IBHMAX_EINH (string) | Einheit: 'Ampere'
+  > STAT_IFHMAX_WERT (real) | max. Strom FH-Antrieb FT hinten
+  > STAT_IFHMAX_EINH (string) | Einheit: 'Ampere'
+  > STAT_U30L1_WERT (real) | Spannung am Laststromkreis 1
+  > STAT_U30L1_EINH (string) | Einheit: 'Volt'
+  > STAT_U30L2_WERT (real) | Spannung am Laststromkreis 2
+  > STAT_U30L2_EINH (string) | Einheit: 'Volt'
+  > STAT_UWIINT_WERT (real) | Spannung am Wischerpotentiometer
+  > STAT_UWIINT_EINH (string) | Einheit: 'Volt'
+  > STAT_UEKSBH_WERT (real) | Spannung an der Einklemmschutzleiste BH
+  > STAT_UEKSBH_EINH (string) | Einheit: 'Volt'
+  > STAT_UEKSFH_WERT (real) | Spannung an der Einklemmschutzleiste FH
+  > STAT_UEKSFH_EINH (string) | Einheit: 'Volt'
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_DIGITAL_GM3
+(Ansteuern eines digitalen Ein- oder Ausgangs v. GM3)
+ << ORT (string) | gewuenschte Komponente
+ << EIN (int) | '1', wenn einschalten / '0', wenn ausschalten
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_ANALOG_GM3
+(Ansteuern eines analogen Ein- oder Ausgangs v. GM3)
+ << ORT (string) | gewuenschte Komponente
+ << WERT (long) | Wert, mit welchen angesteuert werden soll
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_DIGITAL_FT
+(Status der Digitalsignale der FT (Ein-/Ausgaenge))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_E_ERFT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TGK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_STZV_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_VRFT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SUEW_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SFFZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SFFA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TKFT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SME1_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SME2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SME3_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SSFA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_STZVL_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_DSPEK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_DTSH_AKTIV (int) | Diagnose-Signal Tuerschlossheizung
+  > STAT_IE_SBFTA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFTZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFTT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFHT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SKISI_AKTIV (int) | Schalter Kindersicherung
+  > STAT_IE_SBBTA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBTZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBTT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBHT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSU_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSL_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSFB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSE_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MSFA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MFSE_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_RFHFZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IA_U514MD_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IA_U514RD_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IA_U514CS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_RFHFA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_U2OFF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_BREMS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MVR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MER_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SP_AB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SP_AUF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SP_RE_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SP_LI_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SP_HZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_TSH_AKTIV (int) | Tuerschlossheizung
+  > STAT_A_MELED_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_FB_OK_AKTIV (int) | gueltige FB liegt vor
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_FT
+(Status der Analogsignale der FT)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_USPFH_WERT (real) | Spannung am Spiegelpotentiometer FT horizontal
+  > STAT_USPFH_EINH (string) | Einheit: 'Volt'
+  > STAT_USPFV_WERT (real) | Spannung am Spiegelpotentiometer FT vertikal
+  > STAT_USPFV_EINH (string) | Einheit: 'Volt'
+  > STAT_UEKSF_WERT (real) | Spannung an der Einklemmschutzleiste FT
+  > STAT_UEKSF_EINH (string) | Einheit: 'Volt'
+  > STAT_IFHFT_WERT (real) | momentaner Strom im FH-Antrieb FT
+  > STAT_IFHFT_EINH (string) | Einheit: 'Ampere'
+  > STAT_IFTMAX_WERT (real) | maximaler Strom im FH-Antrieb FT
+  > STAT_IFTMAX_EINH (string) | Einheit: 'Ampere'
+  > STAT_U30_WERT (real) | Spannung an Klemme 30
+  > STAT_U30_EINH (string) | Einheit: 'Volt'
+  > STAT_UFHFTA_WERT (real) | Spannung am Fensterheber FT AUF
+  > STAT_UFHFTA_EINH (string) | Einheit: 'Volt'
+  > STAT_UFHFTZ_WERT (real) | Spannung am Fensterheber FT ZU
+  > STAT_UFHFTZ_EINH (string) | Einheit: 'Volt'
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_DIGITAL_FT
+(Ansteuern eines digitalen Ein- oder Ausgangs der FT)
+ << ORT (string) | gewuenschte Komponente
+ << EIN (int) | '1', wenn einschalten / '0', wenn ausschalten
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_DIGITAL_BT
+(Status der Digitalsignale der BT (Ein-/Ausgaenge))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_E_ERBT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TGK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_STZV_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_VRBT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SUEW_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SFBZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SFBA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_TKBT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SME1_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SME2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SME3_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SSBA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_STZVL_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_DSPEK_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFTA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFTZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFTT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFHT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SKISI_AKTIV (int) | Schalter Kindersicherung
+  > STAT_IE_SBBTA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBTZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBTT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBHT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSU_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSL_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSFB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSE_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MSFA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MFSE_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_RFHBZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IA_U514MD_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IA_U514RD_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IA_U514CS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_RFHBA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_U2OFF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_BREMS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MVR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MER_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SP_AB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SP_AUF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SP_RE_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SP_LI_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_SP_HZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_A_MELED_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_FB_OK_AKTIV (int) | gueltige FB liegt vor
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_BT
+(Status der Analogsignale der BT)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_USPFH_WERT (real) | Spannung am Spiegelpotentiometer BT horizontal
+  > STAT_USPFH_EINH (string) | Einheit: 'Volt'
+  > STAT_USPFV_WERT (real) | Spannung am Spiegelpotentiometer BT vertikal
+  > STAT_USPFV_EINH (string) | Einheit: 'Volt'
+  > STAT_UEKSF_WERT (real) | Spannung an der Einklemmschutzleiste BT
+  > STAT_UEKSF_EINH (string) | Einheit: 'Volt'
+  > STAT_IFHBT_WERT (real) | momentaner Strom im FH-Antrieb BT
+  > STAT_IFHBT_EINH (string) | Einheit: 'Ampere'
+  > STAT_IBTMAX_WERT (real) | maximaler Strom im FH-Antrieb BT
+  > STAT_IBTMAX_EINH (string) | Einheit: 'Ampere'
+  > STAT_U30_WERT (real) | Spannung an Klemme 30
+  > STAT_U30_EINH (string) | Einheit: 'Volt'
+  > STAT_UFHBTA_WERT (real) | Spannung am Fensterheber BT AUF
+  > STAT_UFHBTA_EINH (string) | Einheit: 'Volt'
+  > STAT_UFHBTZ_WERT (real) | Spannung am Fensterheber BT ZU
+  > STAT_UFHBTZ_EINH (string) | Einheit: 'Volt'
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_DIGITAL_BT
+(Ansteuern eines digitalen Ein- oder Ausgangs der BT)
+ << ORT (string) | gewuenschte Komponente
+ << EIN (int) | '1', wenn einschalten / '0', wenn ausschalten
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_DIGITAL_SHD
+(Status der Digitalsignale des SHD (Ein-/Ausgaenge))
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > STAT_IE_UBLOW_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_DMSHDZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_DMSHDA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SSHDH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SSHDZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SSHDA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_INKRA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_INKRB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_COE39_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFN_NRM_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IA_ENIC2_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IA_MSHDA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IA_MSHDZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IA_INKRV_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+STATUS_ANALOG_SHD
+(Status der Analogsignale des SHD)
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > STAT_SHDPOS_WERT (real) | SHD-Position
+  > STAT_SHDPOS_EINH (string) | Einheit: 'Milli-Meter'
+  > STAT_UMOT_WERT (real) | Spannung am SHD-Motor
+  > STAT_UMOT_EINH (string) | Einheit: 'Milli-Volt'
+  > STAT_DMOT_WERT (real) | Drehmoment am SHD-Motor
+  > STAT_DMOT_EINH (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+STEUERN_DIGITAL_SHD
+(Ansteuern eines digitalen Ein- oder Ausgangs des SHD)
+ << ORT (string) | gewuenschte Komponente
+ << EIN (int) | '1', wenn einschalten / '0', wenn ausschalten
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+STATUS_DIGITAL_SHD_NEU
+(Status der Digitalsignale des neuen SHD fuer E39 (Ein-/Ausgaenge))
+  > JOB_STATUS (string) | OKAY, wenn fehlerfrei
+  > STAT_KEY_HEB (int) | Taste Heben
+  > STAT_KEY_AUF (int) | Taste Oeffnen
+  > STAT_KEY_ZU (int) | Taste Schliessen
+  > STAT_SHDK (int) | GM-Signale 1: Komfortfunktion aktiv
+  > STAT_SHDKS (int) | GM-Signale 1: 0: Komfortoeffnen, 1: Komfortschliessen
+  > STAT_SHDI (int) | GM-Signale 2: SHD inaktiv
+  > STAT_REV_GB (int) | GM-Signale 2: 0: 1 Sekunde Reversieren, 1: bis Einklemmanfang
+  > STAT_SHDTZI (int) | GM-Signale 2: Tipp Zu inaktiv
+  > STAT_SHDTAI (int) | GM-Signale 2: Tipp Auf inaktiv
+  > STAT_PANIK_MODE (int) | Reserve ?
+  > STAT_NORMIERT (int) | Dach ist normiert
+  > STAT_TIPP_HEB (int) | Tippbetrieb Heben freigegeben
+  > STAT_TIPP_AUS_HEB (int) | Tippbetrieb Auf, Zu aus Hebebereich freigegeben
+  > STAT_KO_HEB (int) | Komfortoeffnen nach Heben
+  > STAT_SAERO_MODE (int) | Schliessen immer aus der gleichen Richtung
+  > STAT_TAKT_ENA (int) | Taktung freigegeben
+  > STAT_SANFT_ENA (int) | Sanftanlauf
+  > STAT_MOTOR_EIN (int) | Motor Einschalten
+  > STAT_VOR (int) | 0: Rueckwaertsfahrt, 1: Vorwaertsfahrt
+  > STAT_QSHDZ (int) | SHD-Signale: 0: SHD nicht geschlossen, 1: Dach geschlossen
+  > STAT_THW_IDLE (int) | Motor ist ausgekuehlt (von Thermowaechter)
+  > STAT_SKB_FA (int) | SKB ist aktiviert
+  > STAT_KH_GOOD (int) | Kennlinie Heben okay (ab 2. Abfrage aktuell)
+  > STAT_KS_GOOD (int) | Kennlinie Schieben okay (ab 2. Abfrage aktuell)
+  > STAT_BUSAI_LOCK (int) | Autoinit ueber Bus gesperrt
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+STATUS_ANALOG_SHD_NEU
+(Status der Analogsignale des neuen SHD fuer E39)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_AKT_POS_WERT (real) | aktuelle Dachposition
+  > STAT_AKT_POS_EINH (string) | Einheit: Milli-Meter ?
+  > STAT_T_MOT_WERT (real) | Motorankertemperatur
+  > STAT_T_MOT_EINH (string) | Einheit: Grad Celsius
+  > STAT_U_IST_WERT (real) | Spannung am Motor
+  > STAT_U_IST_EINH (string) | Einheit: Volt
+  > STAT_U_BATT_WERT (real) | Batteriespannung (Klemme 30)
+  > STAT_U_BATT_EINH (string) | Einheit: Volt
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+STEUERN_DIGITAL_SHD_NEU
+(Ansteuern eines digitalen Ein- oder Ausgangs des neuen SHD fuer E39)
+ << ORT (string) | gewuenschte Komponente
+ << EIN (int) | '1', wenn einschalten / '0', wenn ausschalten
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | Hex-Antwort von SG
+
+STATUS_DIGITAL_SB
+(Status der Digitalsignale des SB (Ein-/Ausgaenge))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_IE_SBFTA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFTZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFTT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBFHT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBKS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBTA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBTZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBTT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBBHT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSU_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSR_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSL_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSFB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IE_SBSE_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_DIGITAL_SB
+(Ansteuern eines digitalen Ein- oder Ausgangs des SB)
+ << ORT (string) | gewuenschte Komponente
+ << EIN (int) | '1', wenn einschalten / '0', wenn ausschalten
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_DIGITAL_SM_LSM
+(Status der Digitalsignale des SM/LSM (Ein-/Ausgaenge))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_E_MSLFAVO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSLFAZU_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSHFAAF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSHFAAB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSNFAAF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSNFAAB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MLNFAVO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MLNFAZU_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MKFAAF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MKFAAB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSOFAV_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSOFAZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_LKVFA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_LKZFA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MLSNAF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MLSNAB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MLSLVO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MLSLZU_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SM
+(Status der Achsenposition des SM)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE0_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE0_EINH (string) | Einheit: '1'
+  > STAT_ACHSE1_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE1_EINH (string) | Einheit: '1'
+  > STAT_ACHSE2_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE2_EINH (string) | Einheit: '1'
+  > STAT_ACHSE3_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE3_EINH (string) | Einheit: '1'
+  > STAT_ACHSE4_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE4_EINH (string) | Einheit: '1'
+  > STAT_ACHSE5_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE5_EINH (string) | Einheit: '1'
+  > STAT_ACHSE6_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE6_EINH (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SMBF
+(Status der Achsenposition des SMBF)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE0_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE0_EINH (string) | Einheit: '1'
+  > STAT_ACHSE1_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE1_EINH (string) | Einheit: '1'
+  > STAT_ACHSE2_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE2_EINH (string) | Einheit: '1'
+  > STAT_ACHSE3_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE3_EINH (string) | Einheit: '1'
+  > STAT_ACHSE4_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE4_EINH (string) | Einheit: '1'
+  > STAT_ACHSE5_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE5_EINH (string) | Einheit: '1'
+  > STAT_ACHSE6_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE6_EINH (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_LSM
+(Status der Achsenposition des LSM)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE7_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE7_EINH (string) | Einheit: '1'
+  > STAT_ACHSE8_WERT (int) | aktuelle Achsenposition
+  > STAT_ACHSE8_EINH (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SM_LAENGS_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE0_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE0_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE0_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE0_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SM_HOEHE_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE1_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE1_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE1_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE1_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SM_NEIGUNG_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE2_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE2_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE2_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE2_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SM_LEHNE_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE3_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE3_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE3_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE3_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SM_KOPF_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE4_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE4_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE4_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE4_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SM_SITZTIEFE_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE5_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE5_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE5_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE5_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SM_LEHNENKOPF_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE6_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE6_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE6_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE6_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_LSM_NEIGUNG_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE7_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE7_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE7_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE7_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_LSM_LAENGS_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE8_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE8_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE8_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE8_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SMBF_LAENGS_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE0_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE0_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE0_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE0_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SMBF_HOEHE_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE1_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE1_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE1_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE1_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SMBF_NEIGUNG_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE2_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE2_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE2_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE2_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SMBF_LEHNE_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE3_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE3_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE3_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE3_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SMBF_KOPF_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE4_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE4_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE4_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE4_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SMBF_SITZTIEFE_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE5_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE5_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE5_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE5_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_ANALOG_SMBF_LEHNENKOPF_MIN_MAX
+(Status des Schleppzeigerwertes der Achse)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_ACHSE6_WERT_MAX (int) | aktueller min Wert der Achse
+  > STAT_ACHSE6_EINH_MAX (string) | Einheit: '1'
+  > STAT_ACHSE6_WERT_MIN (int) | aktueller max Wert der Achse
+  > STAT_ACHSE6_EINH_MIN (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_DIGITAL_SM_LSM
+(Ansteuern eines digitalen Ein- oder Ausgangs des SM_LSM)
+ << ORT (string) | gewuenschte Komponente
+ << EIN (int) | '1', wenn einschalten / '0', wenn ausschalten
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_DIGITAL_SMBF
+(Status der Digitalsignale des SMBF (Ein-/Ausgaenge))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_E_MSLBFVO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSLBFZU_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSHBFAF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSHBFAB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSNBFAF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSNBFAB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MLNBFVO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MLNBFZU_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MKBFAF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MKBFAB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSOBFV_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSOBFZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_LKVBF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_LKZBF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_DIGITAL_SMBF
+(Ansteuern eines digitalen Ein- oder Ausgangs des SMBF)
+ << ORT (string) | gewuenschte Komponente
+ << EIN (int) | '1', wenn einschalten / '0', wenn ausschalten
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_DIGITAL_SMSFB
+(Status der Digitalsignale des SMSFB (Ein-/Ausgaenge))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_E_MSLBFVO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSLBFZU_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSHBFAF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSHBFAB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSNBFAF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSNBFAB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MLNBFVO_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MLNBFZU_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MKBFAF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MKBFAB_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSOBFV_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_MSOBFZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_LKVBF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_LKZBF_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_DIGITAL_SMSFB
+(Ansteuern eines digitalen Ein- oder Ausgangs des SMSFB)
+ << ORT (string) | gewuenschte Komponente
+ << EIN (int) | '1', wenn einschalten / '0', wenn ausschalten
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_DIGITAL_NACHEINANDER
+(Ansteuern maximal 5 digitaler Signale des GM3)
+ << P_MODUL (string) | Name des gewuenschten Peripherie-Moduls
+ << SEKUNDEN (int) | Pausenzeit am Ende in Sekunden
+ << ORT1 (string) | gewuenschte Komponente
+ << ORT2 (string) | gewuenschte Komponente
+ << ORT3 (string) | gewuenschte Komponente
+ << ORT4 (string) | gewuenschte Komponente
+ << ORT5 (string) | gewuenschte Komponente
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AUFTRAG1 (binary) | 
+  > _TEL_AUFTRAG2 (binary) | 
+  > _TEL_AUFTRAG3 (binary) | 
+  > _TEL_AUFTRAG4 (binary) | 
+  > _TEL_AUFTRAG5 (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_SIMULTAN_GM3
+(Gleichzeitiges Ansteuern maximal 5 digitaler Signale des GM3)
+ << ORT1 (string) | gewuenschte Komponente
+ << ORT2 (string) | gewuenschte Komponente
+ << ORT3 (string) | gewuenschte Komponente
+ << ORT4 (string) | gewuenschte Komponente
+ << ORT5 (string) | gewuenschte Komponente
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_BYTES_GM3
+(Status der Digitalsignale des GM III)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_DATEN (binary) | 32 Bytes
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_BYTES_FT
+(Status aller Signale des Peripheriemoduls FT)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_DATEN (binary) | 27 Bytes
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_BYTES_BT
+(Status aller Signale des Peripheriemoduls BT)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_DATEN (binary) | 27 Bytes
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_BYTES_SHD
+(Status aller Signale des Peripheriemoduls SHD)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_DATEN (binary) | 9 Bytes
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_BYTES_SB
+(Status aller Signale des Peripheriemoduls SB)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_DATEN (binary) | 4 Bytes
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_FH_FT
+(Status der FH-Signale der FT)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_PS_SFFA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SFFZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SFFT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFHFT_WERT (long) | momentaner Strom im FH-Antrieb FT
+  > STAT_IFHFT_EINH (string) | Einheit: 'Ampere'
+  > STAT_IFTMAX_WERT (long) | maximaler Strom im FH-Antrieb FT
+  > STAT_IFTMAX_EINH (string) | Einheit: 'Ampere'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_FH_BT
+(Status der FH-Signale der BT)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_PS_SFBA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SFBZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SFBT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFHBT_WERT (long) | momentaner Strom im FH-Antrieb BT
+  > STAT_IFHBT_EINH (string) | Einheit: 'Ampere'
+  > STAT_IBTMAX_WERT (long) | maximaler Strom im FH-Antrieb BT
+  > STAT_IBTMAX_EINH (string) | Einheit: 'Ampere'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_FH_HINTEN
+(Status der FH-Signale hinten (GM3))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_PS_SBFHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SBFHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SBFHT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SBBHA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SBBHZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_PS_SBBHT_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_IFHBH_WERT (long) | mom. Strom FH-Antrieb BT hinten
+  > STAT_IFHBH_EINH (string) | Einheit: 'Ampere'
+  > STAT_IFHFH_WERT (long) | mom. Strom FH-Antrieb FT hinten
+  > STAT_IFHFH_EINH (string) | Einheit: 'Ampere'
+  > STAT_IBHMAX_WERT (long) | max. Strom FH-Antrieb BT hinten
+  > STAT_IBHMAX_EINH (string) | Einheit: 'Ampere'
+  > STAT_IFHMAX_WERT (long) | max. Strom FH-Antrieb FT hinten
+  > STAT_IFHMAX_EINH (string) | Einheit: 'Ampere'
+  > _TEL_ANTWORT (binary) | 
+
+STATUS_SHD
+(Status der SHD-Signale)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_E_SSHDH_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SSHDZ_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_E_SSHDA_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > STAT_DMOT_WERT (long) | Drehmoment am SHD-Motor
+  > STAT_DMOT_EINH (string) | Einheit: '1'
+  > _TEL_ANTWORT (binary) | 
+
+IDENT_SW_NR_TUEREN
+(Vergleich der Softwarenummern der Tuermodule FT und BT)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > SW_NR_IDENTISCH (int) | 1 wenn gleich - 0 wenn verschieden
+  > _TEL_ANTWORT1 (binary) | 
+  > _TEL_ANTWORT2 (binary) | 
+
+STATUS_INRS
+(1.) Ansteuern: NGAG - 2.) Status lesen: INRS)
+ << EIN (int) | '1', wenn einschalten / '0', wenn ausschalten
+-----------------------------------------------
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > STAT_E_INRS_AKTIV (int) | 0, wenn FALSE / 1, wenn TRUE
+  > _TEL_AN_SG (binary) | 
+  > _TEL_ANTWORT1 (binary) | 
+  > _TEL_ANTWORT2 (binary) | 
+
+SCHREIBEN_SHD_AW
+(ACHTUNG: nur fuer E39/2 mit SHD-Software-Stand < 5  !!!)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+
+TESTEN_SHD_AW
+(ACHTUNG: nur fuer E39/2 mit SHD-Software-Stand < 5  !!!)
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > WERT_POS_AUF (int) | Wert an der Speicherzelle bzgl. 'Position auf' (low Byte)
+
+STEUERN_START_AUTOINIT
+(Autoinit starten (SHD neu))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_ANTWORT (binary) | 
+
+STEUERN_PRUEFMODUS_FREIGEBEN
+(Pruefmodus freigeben (SHD neu))
+  > JOB_STATUS (string) | OKAY, ERROR_..
+  > _TEL_ANTWORT (binary) | 
+
+

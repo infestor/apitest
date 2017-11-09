@@ -1,0 +1,50 @@
+Using ecu: telefon
+
+Init..
+JOB: _JOBS (params: )
+Waiting for response..
+TotalJobSets 5
+
+*****************************************************************************
+INFO
+(Information SGBD)
+  > ECU (string) | Steuergerät im Klartext
+  > ORIGIN (string) | Steuergeräte-Verantwortlicher
+  > REVISION (string) | Versions-Nummer
+  > AUTHOR (string) | Namen aller Autoren
+  > COMMENT (string) | wichtige Hinweise
+  > PACKAGE (string) | Include-Paket-Nummer
+  > SPRACHE (string) | deutsch, english
+
+INITIALISIERUNG
+(Init-Job fuer BMW-TELEFON)
+  > DONE (int) | 1 wenn Okay
+
+IDENT
+(Ident-Daten fuer BMW-TELEFON)
+  > JOB_STATUS (string) | Status der Kommunikation (z.B. ACK)
+  > ID_BMW_NR (string) | BMW-Teilenummer
+  > ID_HW_NR (int) | BMW-Hardwarenummer
+  > ID_COD_INDEX (int) | Codier-Index
+  > ID_DIAG_INDEX (int) | Diagnose-Index
+  > ID_BUS_INDEX (int) | Bus-Index
+  > ID_DATUM_KW (int) | Herstelldatum KW
+  > ID_DATUM_JAHR (int) | Herstelldatum Jahr
+  > ID_LIEF_NR (string) | Lieferanten-Nummer
+  > ID_SW_NR (int) | Softwarenummer
+  > ID_LIEF_TEXT (string) | Lieferantenname
+  > ID_GERAETE_NAME (string) | Telefontyp
+
+STATUS_LESEN
+(verschiedenen Teststati)
+  > JOB_STATUS (string) | Status der Kommunikation (z.B. ACK)
+  > CS_EPROM_IO (int) | 1 -> Checksumme EPROM in Ordnung
+  > TEST_EEPROM_IO (int) | 1 -> Schreib-/Lesetest EEPROM in Ordnung
+  > LTG_SE_UNIT_IO (int) | 1 -> Verbindung zum SE-Geraet in Ordnung
+  > KARTENLESER_IO (int) | 1 -> Kartenlesertest Eject-Box in Ordnung
+
+DIAGNOSE_ENDE
+(Diagnose beenden)
+  > JOB_STATUS (string) | Ergebnis ist immer OKAY, da nur Dummy
+
+
